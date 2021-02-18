@@ -23,3 +23,5 @@ pnpm-debug.log*
 
 .firebase
 .github
+dist/js/app.8af36aef.js
+dist/js/app.8af36aef.js.map
