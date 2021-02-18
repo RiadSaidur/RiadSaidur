@@ -1,30 +1,53 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div>
+    <Header />
+    <Home />
+    <Projects />
+    <About />
+    <Contact />
+    <Footer />
   </div>
-  <router-view/>
 </template>
 
+<script>
+import Home from "./components/Home"
+import Header from "./components/Header"
+import Projects from "./components/Projects"
+import About from "./components/About"
+import Contact from "./components/Contact"
+import Footer from "./components/Footer"
+
+export default {
+  name: 'App',
+  components: {
+    Header,
+    Home,
+    Projects,
+    About,
+    Contact,
+    Footer
+  }
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400&display=swap');
 
-#nav {
-  padding: 30px;
-}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+  }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  a {
+    color: black;
+    text-decoration: none;
+  }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  li {
+    list-style: none;
+  }
 </style>
