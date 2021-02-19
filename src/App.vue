@@ -2,6 +2,7 @@
   <div>
     <Header />
     <Home />
+    <Skills />
     <Projects />
     <About />
     <Contact />
@@ -12,6 +13,7 @@
 <script>
 import Home from "./components/Home"
 import Header from "./components/Header"
+import Skills from './components/Skills.vue'
 import Projects from "./components/Projects"
 import About from "./components/About"
 import Contact from "./components/Contact"
@@ -22,6 +24,7 @@ export default {
   components: {
     Header,
     Home,
+    Skills,
     Projects,
     About,
     Contact,
