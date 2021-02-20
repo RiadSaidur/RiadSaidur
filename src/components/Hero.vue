@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'Home'
+  name: 'Hero'
 }
 </script>
 
@@ -20,7 +20,6 @@ export default {
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,.8);
-    color: aliceblue;
     text-align: center;
   }
 
@@ -32,5 +31,6 @@ export default {
   h1 {
     font-size: 2.3rem;
     font-weight: 400;
+    color: aliceblue;
   }
 </style>
