@@ -32,25 +32,3 @@ export default {
   }
 }
 </script>
-
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400&display=swap');
-
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 300;
-  }
-
-  a {
-    color: black;
-    text-decoration: none;
-  }
-
-  li {
-    list-style: none;
-  }
-</style>

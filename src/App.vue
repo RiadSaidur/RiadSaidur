@@ -1,11 +1,11 @@
 <template>
   <div id="nav">
     <header><a href="#">Saidur</a></header>
-    <nav>
+    <!-- <nav>
       <router-link to="/">Home</router-link>
       <router-link to="/about">About</router-link>
-    </nav>
-    <a href="#" id="primaryCTA">Contact Me</a>
+    </nav> -->
+    <a href="#contact" id="primaryCTA">Contact Me</a>
   </div>
   <router-view/>
 </template>
@@ -13,6 +13,10 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400&display=swap');
+
+  html {
+    scroll-behavior: smooth;
+  }
 
   * {
     margin: 0;
@@ -69,7 +73,8 @@
 
   h2 {
     text-align: center;
-    padding-bottom: .5rem;
+    padding-bottom: 1rem;
     border-bottom: 1px solid rgba(128, 128, 128, 0.4);
+    margin-bottom: 1rem;
   }
 </style>
