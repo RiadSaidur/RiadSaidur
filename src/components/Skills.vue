@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" id="skills">
     <h2>Skills</h2>
     <div class="parent-skills">
       <div class="child-skills" v-for="(skill, idx) in skillsList" :key="idx">
@@ -17,10 +17,10 @@ export default {
       skillsList: [
         'html5',
         'css3',
+        'javascript',
         'bootstrap',
         'material-ui',
         'vuetify',
-        'javascript',
         'logo',
         'nuxt',
         'react',
@@ -28,12 +28,15 @@ export default {
         'node',
         'django',
         'firebase',
+        'mongo',
+        'postgres',
+        'figma'
       ]  
     }
   },
   methods: {
     getImageURL(logo) {
-      return require(`../assets/${logo}.png`)
+      return require(`../assets/skills/${logo}.png`);
     }
   }
 }
@@ -42,10 +45,6 @@ export default {
 <style scoped>
   img {
     width: 48px;
-  }
-
-  h2 {
-    font-weight: 200;
   }
 
   .container {
