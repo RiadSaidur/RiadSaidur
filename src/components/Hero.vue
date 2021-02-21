@@ -1,8 +1,10 @@
 <template>
   <div class="container">
-    <h3>meet the man, the myth, the mystery</h3>
-    <h1>Saidur Rahman Riad</h1>
-    <span>a web developing wizard 🍾</span>
+    <div class="content">
+      <h3>meet the man, the myth, the mystery</h3>
+      <h1>Saidur Rahman Riad</h1>
+      <span>a web developing wizard 🍾</span>
+    </div>
   </div>
 </template>
 
@@ -16,21 +18,42 @@ export default {
   .container {
     position: relative;
     padding: 10rem .5rem;
+    text-align: center;
+  }
+
+  .container::after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: url('../assets/home-background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.8);
-    text-align: center;
+    background-position: right;
+    filter: blur(5px);
+  }
+
+  .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
   }
 
   h3, span {
     font-weight: 200;
-    color: rgba(240, 248, 255, 0.7);
   }
   
   h1 {
     font-size: 2.3rem;
     font-weight: 400;
-    color: aliceblue;
   }
 </style>
