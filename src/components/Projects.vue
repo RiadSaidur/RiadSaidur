@@ -64,9 +64,11 @@ export default {
     padding: 1.5rem;
     display: flex;
     align-items: center;
+    max-width: 1500px;
+    margin: 0 auto;
   }
 
-  .showcase div {
+  .showcase > div {
     position: relative;
     padding: 2rem 1rem 0;
   }
@@ -76,9 +78,13 @@ export default {
   }
 
   .show-on-hover {
+    position: absolute;
     top: 10%;
     left: 0;
-    display: none;
+    padding: 1rem 0 1rem 1rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
   }
 
   .show-on-hover p {
@@ -91,11 +97,11 @@ export default {
   }
 
   img:hover + .show-on-hover, .show-on-hover:hover {
-    display: block;
-    position: absolute;
     background-color: rgba(76, 0, 130, 0.9);
     height: 100%;
     border-radius: 10px;
+    visibility: visible;
+    opacity: 1;
   }
 
   h3 {
