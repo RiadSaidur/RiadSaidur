@@ -24,13 +24,14 @@ export default {
         'logo',
         'nuxt',
         'react',
-        'pwa',
+        'firebase',
         'node',
         'django',
-        'firebase',
+        'pwa',
         'mongo',
         'postgres',
-        'figma'
+        'figma',
+        'postman'
       ]  
     }
   },
@@ -56,6 +57,8 @@ export default {
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
   .child-skills {
