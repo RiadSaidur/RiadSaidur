@@ -1,6 +1,6 @@
 <template>
   <div id="nav">
-    <header><a href="#">Saidur</a></header>
+    <header><a href="/">Saidur</a></header>
     <!-- <nav>
       <router-link to="/">Home</router-link>
       <router-link to="/about">About</router-link>
