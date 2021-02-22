@@ -5,7 +5,7 @@
       <router-link to="/">Home</router-link>
       <router-link to="/about">About</router-link>
     </nav> -->
-    <a href="#contact" id="primaryCTA">Contact Me</a>
+    <!-- <a href="#contact" id="primaryCTA">Contact Me</a> -->
   </div>
   <router-view/>
 </template>
@@ -55,13 +55,6 @@
     font-weight: 400;
   }
 
-  #primaryCTA {
-    border: 1px solid gray;
-    border-radius: .5rem;
-    background-color: indigo;
-    color: ivory;
-  }
-
   a {
     color: black;
     text-decoration: none;
@@ -76,5 +69,13 @@
     padding-bottom: 1rem;
     border-bottom: 1px solid rgba(128, 128, 128, 0.4);
     margin-bottom: 1rem;
+  }
+
+  #primaryCTA {
+    border: 1px solid gray;
+    border-radius: .5rem;
+    background-color: indigo;
+    color: ivory;
+    padding: .5rem 1rem !important;
   }
 </style>
