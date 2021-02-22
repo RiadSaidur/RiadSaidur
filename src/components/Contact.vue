@@ -4,8 +4,8 @@
     <div class="content">
       <h3>Don't be shy, Say <span>Hi.</span> </h3>
       <div class="details">
-        <span>Email: riadsaidur@gmail.com</span>
-        <span>Mobile: (+88) 01623381010</span>
+        <span>Email: <a href="mailto:riadsaidur@gmail.com">riadsaidur@gmail.com</a></span>
+        <span>Mobile: <a href="tel:+8801628381010">(+880) 1628381010</a></span>
         <div class="social">
           <a href="https://github.com/RiadSaidur" target="_blank">
             <img src="@/assets/social/github.png" alt="github">
