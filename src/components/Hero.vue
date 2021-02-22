@@ -32,7 +32,8 @@ export default {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right;
-    filter: blur(5px);
+    background-position-y: top;
+    filter: blur(4px);
   }
 
   .content {
