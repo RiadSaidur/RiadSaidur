@@ -22,6 +22,7 @@ export default {
 <style scoped>
   .container {
     padding: 0 .5rem;
+    padding-top: 1rem;
   }
 
   .content {
