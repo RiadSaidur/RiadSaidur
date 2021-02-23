@@ -56,7 +56,6 @@
   }
 
   a {
-    color: black;
     text-decoration: none;
   }
 
@@ -69,6 +68,7 @@
     padding-bottom: 1rem;
     border-bottom: 1px solid rgba(128, 128, 128, 0.4);
     margin-bottom: 1rem;
+    font-weight: 200;
   }
 
   #primaryCTA {
