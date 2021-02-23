@@ -8,7 +8,30 @@
     <!-- <a href="#contact" id="primaryCTA">Contact Me</a> -->
   </div>
   <router-view/>
+  <a class="back-to-top" :class="{ 'hideButton': !showButton }" href='#'>🔝</a>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      showButton: false
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.onScroll)
+  },
+  unmounted() {
+    window.addEventListener('scroll', this.onScroll)
+  },
+  methods: {
+    onScroll() {
+      const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+      this.showButton = currentScrollPosition > window.innerHeight;
+    }
+  }
+}
+</script>
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
@@ -77,5 +100,28 @@
     background-color: indigo;
     color: ivory;
     padding: .5rem 1rem !important;
+  }
+
+  .back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    transition: visibility 0s, opacity 0.5s linear;
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+
+  .hideButton {
+    visibility: none;
+    opacity: 0;
   }
 </style>
