@@ -3,7 +3,7 @@
     <h2>Skills</h2>
     <div class="parent-skills">
       <div class="child-skills" v-for="(skill, idx) in skillsList" :key="idx">
-        <img :src="getImageURL(skill)" :alt="skill">
+        <img :src="getImageURL(skill)" :alt="skill" :title="skill">
       </div>
     </div>
   </div>
