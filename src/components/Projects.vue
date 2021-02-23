@@ -7,7 +7,9 @@
         <div class="show-on-hover">
           <h3>{{ project.name }}</h3>
           <p>{{ project.description }}</p>
-          <a href="#" id="details">details</a>
+          <router-link :to="'/project/'+project.screenshot" id="details">
+            details
+          </router-link>
         </div>
       </div>
     </div>
@@ -22,22 +24,22 @@ export default {
       projects: [
         {
           name: "Net Jobs",
-          description: "Find jobs near you and work just to die with earthly posseion",
+          description: "Find jobs near you and work just to die with earthly possesion",
           screenshot: "net-jobs-1"
         },
         {
           name: "Net Jobs 2",
-          description: "Find jobs near you and work just to die with earthly posseion",
+          description: "Find jobs near you and work just to die with earthly possesion",
           screenshot: "net-jobs-2"
         },
         {
           name: "Net Jobs 3",
-          description: "Find jobs near you and work just to die with earthly posseion",
+          description: "Find jobs near you and work just to die with earthly possesion",
           screenshot: "net-jobs-3"
         },
         {
           name: "Net Jobs 4",
-          description: "Find jobs near you and work just to die with earthly posseion",
+          description: "Find jobs near you and work just to die with earthly possesion",
           screenshot: "net-jobs-4"
         }
       ]
