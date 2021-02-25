@@ -1,10 +1,15 @@
 import { createStore } from 'vuex'
-import { projectCollection, screenshotCollection } from '@/firebase'
+import { projectCollection } from '@/firebase'
 
 export default createStore({
   state: {
     projects: [],
     screenshots: []
+  },
+  getters: {
+    getProjectByName: state => name => {
+      return state.projects.find(project => project.name === name)
+    }
   },
   mutations: {
     SET_PROJECT_PREVIEWS(state, projects) {
@@ -19,17 +24,15 @@ export default createStore({
 
       docs.forEach( doc => {
         const tempDoc = doc.data()
-        const primaryImage = tempDoc.screenshots[0]
-    
-        screenshotCollection.child(`${primaryImage}.png`).getDownloadURL()
-          .then( imageURL => {
-              tempDoc.previewImage = imageURL+'png'
-              projects = [ ...projects, tempDoc ]
-              
-              commit('SET_PROJECT_PREVIEWS', projects)
-          })
-          .catch( err => console.log(err))
+        
+        tempDoc.screenshots.forEach((screenshot, idx) => {
+          tempDoc.screenshots[idx] = `https://firebasestorage.googleapis.com/v0/b/saiduriad.appspot.com/o/${screenshot}.png?alt=media`
+        })
+        
+        projects = [ ...projects, tempDoc ]
       })
+
+      commit('SET_PROJECT_PREVIEWS', projects)
     }
   },
   modules: {
