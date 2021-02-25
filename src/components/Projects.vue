@@ -3,7 +3,7 @@
     <h2>Projects</h2>
     <div class="showcase">
       <div v-for="(project, idx) in projects" :key="idx">
-        <img :src="getImageURL(project.screenshot)" :alt="project.screenshot">
+        <img :src="project.previewImage ? project.previewImage : ''" alt="project.screenshot">
         <div class="show-on-hover">
           <h3>{{ project.name }}</h3>
           <p>{{ project.description }}</p>
@@ -17,38 +17,17 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: "Projects",
-  data() {
-    return {
-      projects: [
-        {
-          name: "Net Jobs",
-          description: "Find jobs near you and work just to die with earthly possesion",
-          screenshot: "net-jobs-1"
-        },
-        {
-          name: "Net Jobs 2",
-          description: "Find jobs near you and work just to die with earthly possesion",
-          screenshot: "net-jobs-2"
-        },
-        {
-          name: "Net Jobs 3",
-          description: "Find jobs near you and work just to die with earthly possesion",
-          screenshot: "net-jobs-3"
-        },
-        {
-          name: "Net Jobs 4",
-          description: "Find jobs near you and work just to die with earthly possesion",
-          screenshot: "net-jobs-4"
-        }
-      ]
-    }
+  mounted () {
+    this.$store.dispatch('getProjectPreviews')
   },
-  methods: {
-    getImageURL(screenshot) {
-      return require(`../assets/project-shots/${screenshot}.png`);
-    }
+  computed: {
+    ...mapState([
+      'projects'
+    ])
   }
 }
 </script>
@@ -83,6 +62,7 @@ export default {
     position: absolute;
     top: 10%;
     left: 0;
+    width: 100%;
     padding: 1rem 0 1rem 1rem;
     visibility: hidden;
     opacity: 0;
