@@ -20,6 +20,7 @@ export default {
   },
   mounted() {
     window.addEventListener('scroll', this.onScroll)
+    this.$store.dispatch('getProjectPreviews')
   },
   unmounted() {
     window.addEventListener('scroll', this.onScroll)

@@ -3,11 +3,11 @@
     <h2>Projects</h2>
     <div class="showcase">
       <div v-for="(project, idx) in projects" :key="idx">
-        <img :src="project.previewImage ? project.previewImage : ''" alt="project.screenshot">
+        <img :src="project.screenshots[0]" alt="project.screenshot">
         <div class="show-on-hover">
           <h3>{{ project.name }}</h3>
           <p>{{ project.description }}</p>
-          <router-link :to="'/project/'+project.screenshot" id="details">
+          <router-link :to="'/project/'+project.name" id="details">
             details
           </router-link>
         </div>
@@ -21,9 +21,6 @@ import { mapState } from 'vuex'
 
 export default {
   name: "Projects",
-  mounted () {
-    this.$store.dispatch('getProjectPreviews')
-  },
   computed: {
     ...mapState([
       'projects'
