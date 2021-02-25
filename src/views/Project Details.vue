@@ -6,11 +6,21 @@
       <div>
         <h1>{{ $route.params.id }}</h1>
         <p>{{ projectDetails.description }}</p>
+        <div class="additional-links">
+          <a :href="projectDetails.github" target="_blank">
+            <img src="@/assets/social/github.png" alt="github" title="github repo">
+            <span>Github Repository</span>
+          </a>
+          <a :href="projectDetails.liveLink" target="_blank">
+            <img src="@/assets/social/link.png" alt="live link" title="live link">
+            <span>Live Project</span>
+          </a>
+        </div>
       </div>
     </section>
     <h2>Project Screenshots</h2>
     <section class="scr-container" v-for="(screenshot, idx) in projectDetails.screenshots" :key="idx">
-      <img :src="getImageURL(screenshot)" :alt="screenshot">
+      <img :src="screenshot" :alt="screenshot">
     </section>
   </div>
 </template>
@@ -18,22 +28,10 @@
 <script>
 export default {
   name: 'Project Details',
-  data() {
-    return {
-      projectDetails: {
-        name: "Net Jobs",
-        description: "Find jobs near you and work just to die with earthly possesion",
-        screenshots: [
-          "net-jobs-1",
-          "net-jobs-2",
-          "net-jobs-4"
-        ]
-      }
-    }
-  },
-  methods: {
-    getImageURL(screenshot) {
-      return require(`@/assets/project-shots/${screenshot}.png`);
+  computed: {
+    projectDetails() {
+      const projectName = this.$route.params.id
+      return this.$store.getters.getProjectByName(projectName)
     }
   }
 }
@@ -53,6 +51,9 @@ export default {
   img {
     max-width: 90%;
     max-height: 80vh;
+  }
+
+  .scr-container img {
     padding: .5rem;
     margin-bottom: 1rem;
     box-shadow: 0 0 0 2px hsl(0, 0%, 80%);
@@ -73,10 +74,12 @@ export default {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-bottom: 1.5rem;
   }
+  
 
-  .details div {
-    padding-bottom: 1rem;
+  .details > div {
+    padding: 1rem;
   }
 
   button {
@@ -87,6 +90,23 @@ export default {
     border: none;
     color: aliceblue;
     font-size: 2rem;
+  }
+
+  .additional-links {
+    margin-top: 2rem;
+  }
+
+  .additional-links a {
+    display: flex;
+    align-items: center;
+    padding: .2rem 1rem .2rem 0rem;
+    font-weight: 200;
+  }
+
+  .additional-links img {
+    width: 24px;
+    margin-right: .5rem;
+
   }
 
   @media only screen and (min-width: 720px) {
