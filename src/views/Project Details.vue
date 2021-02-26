@@ -80,6 +80,7 @@ export default {
 
   .details > div {
     padding: 1rem;
+    width: 100%;
   }
 
   button {
@@ -113,6 +114,10 @@ export default {
     .details {
       flex-direction: row;
       justify-content: space-evenly;
+    }
+
+    .details > div {
+      width: 50%;
     }
   }
 </style>
