@@ -1,6 +1,7 @@
 <template>
   <div class="container" id="projects">
     <h2>Projects</h2>
+    <p v-if="!isOnline" class="network-error">you're offline</p>
     <div class="showcase">
       <div v-for="(project, idx) in projects" :key="idx">
         <img :src="project.screenshots[0]" alt="project.screenshot">
@@ -21,10 +22,29 @@ import { mapState } from 'vuex'
 
 export default {
   name: "Projects",
+  data() {
+    return {
+      isOnline: false
+    }
+  },
   computed: {
     ...mapState([
       'projects'
     ])
+  },
+  mounted() {
+    this.isOnline = navigator.onLine ? true : false
+    window.addEventListener('online', this.updateStatus)
+    window.addEventListener('offline', this.updateStatus)
+  },
+  beforeUnmount() {
+    window.removeEventListener('online', this.updateStatus)
+    window.removeEventListener('offline', this.updateStatus)
+  },
+  methods: {
+    updateStatus(e) {
+      this.isOnline = (e.type === 'online')
+    }
   }
 }
 </script>
@@ -94,5 +114,13 @@ export default {
     padding: .3rem 1rem;
     border-radius: 10px;
     font-weight: 400;
+  }
+
+  .network-error {
+    padding: .5rem;
+    font-weight: 400;
+    text-align: center;
+    background-color: rgba(255, 127, 80, 0.5);
+    z-index: 3;
   }
 </style>
