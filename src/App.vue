@@ -22,8 +22,8 @@ export default {
     window.addEventListener('scroll', this.onScroll)
     this.$store.dispatch('getProjectPreviews')
   },
-  unmounted() {
-    window.addEventListener('scroll', this.onScroll)
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.onScroll)
   },
   methods: {
     onScroll() {
