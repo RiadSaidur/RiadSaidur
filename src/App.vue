@@ -8,7 +8,9 @@
     <!-- <a href="#contact" id="primaryCTA">Contact Me</a> -->
   </div>
   <router-view/>
-  <a class="back-to-top" :class="{ 'hideButton': !showButton }" href='#'>🔝</a>
+  <a class="back-to-top" :class="{ 'hideButton': !showButton }" href='#'>
+    <img src="@/assets/top.svg" alt="go to top">
+  </a>
 </template>
 
 <script>
@@ -29,6 +31,7 @@ export default {
     onScroll() {
       const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
       this.showButton = currentScrollPosition > window.innerHeight;
+      console.log(this.showButton)
     }
   }
 }
@@ -109,7 +112,7 @@ export default {
     right: 30px;
     background: none;
     border: none;
-    font-size: 2rem;
+    width: 2rem;
     transition: visibility 0s, opacity 0.5s linear;
   }
 

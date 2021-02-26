@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <button @click="$router.go(-1)" title="go back">🔙</button>
+    <button @click="$router.go(-1)" title="go back">
+      <img src="@/assets/back.svg" alt="go back">
+    </button>
     <section class="details">
       <img src="https://media.giphy.com/media/fXDqamyZLsDqNAcJEf/giphy.gif" alt="gif">
       <div>
@@ -90,7 +92,10 @@ export default {
     background: none;
     border: none;
     color: aliceblue;
-    font-size: 2rem;
+  }
+
+  button img {
+    width: 2rem;
   }
 
   .additional-links {
