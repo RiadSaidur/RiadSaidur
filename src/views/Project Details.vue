@@ -4,32 +4,37 @@
       <img src="@/assets/back.svg" alt="go back">
     </button>
     <section class="details">
-      <img src="https://media.giphy.com/media/fXDqamyZLsDqNAcJEf/giphy.gif" alt="gif">
+      <div class="slideshow">
+        <h2>Project Screenshots</h2>
+        <ImageSlider :screenshots="projectDetails.screenshots" :legend="true" class="scr-container"/>
+      </div>
       <div>
+        <h2>Project Details</h2>
         <h1>{{ $route.params.id }}</h1>
         <p>{{ projectDetails.description }}</p>
         <div class="additional-links">
-          <a :href="projectDetails.github" target="_blank">
+          <a v-if="projectDetails.github" :href="projectDetails.github" target="_blank">
             <img src="@/assets/social/github.png" alt="github" title="github repo">
             <span>Github Repository</span>
           </a>
-          <a :href="projectDetails.liveLink" target="_blank">
+          <a v-if="projectDetails.liveLink" :href="projectDetails.liveLink" target="_blank">
             <img src="@/assets/social/link.png" alt="live link" title="live link">
             <span>Live Project</span>
           </a>
         </div>
       </div>
     </section>
-    <h2>Project Screenshots</h2>
-    <section class="scr-container" v-for="(screenshot, idx) in projectDetails.screenshots" :key="idx">
-      <img :src="screenshot" :alt="screenshot">
-    </section>
   </div>
 </template>
 
 <script>
+import ImageSlider from '@/components/ImageSlider';
+
 export default {
   name: 'Project Details',
+  components: {
+    ImageSlider
+  },
   computed: {
     projectDetails() {
       const projectName = this.$route.params.id
@@ -41,25 +46,12 @@ export default {
 
 <style scoped>
   .container {
-    padding: 2rem .5rem;
+    padding: 0 .5rem;
   }
 
   .scr-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  img {
-    max-width: 90%;
+    margin: 0 auto;
     max-height: 80vh;
-  }
-
-  .scr-container img {
-    padding: .5rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 0 0 2px hsl(0, 0%, 80%);
-    border-radius: 10px;
   }
 
   h1 {
@@ -73,10 +65,7 @@ export default {
 
   .details {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    margin-bottom: 1.5rem;
   }
   
 
@@ -119,10 +108,6 @@ export default {
     .details {
       flex-direction: row;
       justify-content: space-evenly;
-    }
-
-    .details > div {
-      width: 50%;
     }
   }
 </style>
