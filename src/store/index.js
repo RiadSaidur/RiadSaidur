@@ -24,9 +24,10 @@ export default createStore({
 
       docs.forEach( doc => {
         const tempDoc = doc.data()
+        const imgFolder = tempDoc.name
         
         tempDoc.screenshots.forEach((screenshot, idx) => {
-          tempDoc.screenshots[idx] = `https://firebasestorage.googleapis.com/v0/b/saiduriad.appspot.com/o/${screenshot}.png?alt=media`
+          tempDoc.screenshots[idx] = `https://firebasestorage.googleapis.com/v0/b/saiduriad.appspot.com/o/${imgFolder}%2F${screenshot}?alt=media`
         })
         
         projects = [ ...projects, tempDoc ]
