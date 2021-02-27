@@ -31,7 +31,6 @@ export default {
     onScroll() {
       const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
       this.showButton = currentScrollPosition > window.innerHeight;
-      console.log(this.showButton)
     }
   }
 }
