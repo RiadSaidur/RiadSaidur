@@ -4,7 +4,8 @@
     <p v-if="!isOnline" class="network-error">you're offline</p>
     <div class="showcase">
       <div v-for="(project, idx) in projects" :key="idx">
-        <img :src="project.screenshots[0]" alt="project.screenshot">
+        <!-- <img :src="project.screenshots[0]" alt="project.screenshot"> -->
+        <ImageSlider :screenshots="project.screenshots[0]" :multiple="false" class="scr-container" />
         <div class="show-on-hover">
           <h3>{{ project.name }}</h3>
           <p>{{ project.description }}</p>
@@ -18,10 +19,14 @@
 </template>
 
 <script>
+import ImageSlider from "@/components/ImageSlider"
 import { mapState } from 'vuex'
 
 export default {
   name: "Projects",
+  components: {
+    ImageSlider
+  },
   data() {
     return {
       isOnline: false
@@ -71,7 +76,7 @@ export default {
     padding: 2rem 1rem 0;
   }
 
-  img {
+  .scr-container {
     max-width: 320px;
   }
 
@@ -95,7 +100,7 @@ export default {
     color: aliceblue;
   }
 
-  img:hover + .show-on-hover, .show-on-hover:hover {
+  .scr-container:hover + .show-on-hover, .show-on-hover:hover {
     background-color: rgba(76, 0, 130, 0.9);
     height: 100%;
     border-radius: 10px;

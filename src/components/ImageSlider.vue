@@ -1,7 +1,7 @@
 <template>
   <div>
     <img :src="currentImage" :alt="currentImage" class="currentImage">
-    <div v-if="legend" class="legend">
+    <div v-if="multiple" class="legend">
       <button 
         v-for="(screenshots, idx) in screenshots" 
         :key="idx"
@@ -21,7 +21,7 @@ export default {
   name: "ImageSlider",
   props: [
     'screenshots',
-    'legend'
+    'multiple'
   ],
   data() {
     return {
@@ -31,7 +31,8 @@ export default {
     }
   },
   mounted() {
-    this.interval = setInterval(this.changeImage, 3000)
+    if(this.multiple) this.interval = setInterval(this.changeImage, 3000)
+    else this.currentImage = this.screenshots
   },
   methods: {
     changeImage () {

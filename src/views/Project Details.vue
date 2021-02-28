@@ -6,18 +6,18 @@
     <section class="details">
       <div class="slideshow">
         <h2>Project Screenshots</h2>
-        <ImageSlider :screenshots="projectDetails.screenshots" :legend="true" class="scr-container"/>
+        <ImageSlider :screenshots="projectDetails?.screenshots" :multiple="true" class="scr-container"/>
       </div>
       <div>
         <h2>Project Details</h2>
         <h1>{{ $route.params.id }}</h1>
-        <p>{{ projectDetails.description }}</p>
+        <p>{{ projectDetails?.description }}</p>
         <div class="additional-links">
-          <a v-if="projectDetails.github" :href="projectDetails.github" target="_blank">
+          <a v-if="projectDetails?.github" :href="projectDetails?.github" target="_blank">
             <img src="@/assets/social/github.png" alt="github" title="github repo">
             <span>Github Repository</span>
           </a>
-          <a v-if="projectDetails.liveLink" :href="projectDetails.liveLink" target="_blank">
+          <a v-if="projectDetails?.liveLink" :href="projectDetails?.liveLink" target="_blank">
             <img src="@/assets/social/link.png" alt="live link" title="live link">
             <span>Live Project</span>
           </a>
