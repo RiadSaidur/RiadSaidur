@@ -115,10 +115,16 @@ export default {
   }
 
   #details {
-    background-color: white;
+    background-color: whitesmoke;
     padding: .3rem 1rem;
-    border-radius: 10px;
+    border-radius: 5px;
     font-weight: 400;
+    box-shadow: 0 0 0 2px #A3D4FF;
+    transition: all 300ms ease-in-out;
+  }
+
+  #details:hover {
+    box-shadow: 0 0 4px 2px #A3D4FF;
   }
 
   .network-error {
