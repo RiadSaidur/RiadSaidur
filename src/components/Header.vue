@@ -47,7 +47,8 @@ export default {
 
 <style scoped>
   a {
-    padding: .5rem .2rem;
+    padding: .5rem .3rem;
+    font-weight: 400;
   }
 
   ul {
@@ -61,7 +62,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    background-color: whitesmoke;
+    background: linear-gradient(aliceblue, whitesmoke, aliceblue);
     transform: translate3d(0, 0, 0);
     transition: 0.1s all ease-in-out;
     z-index: 2;
@@ -73,5 +74,6 @@ export default {
 
   .reposition-top {
     top: 0px;
+    box-shadow: 0 0 10px 0 gray;
   }
 </style>
