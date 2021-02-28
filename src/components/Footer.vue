@@ -14,11 +14,10 @@ export default {
 
 <style scoped>
   footer {
-    background-color: indigo;
+    background: linear-gradient(aliceblue, whitesmoke, aliceblue);
   }
 
   footer p {
-    color: aliceblue;
     text-align: center;
     font-weight: 200;
     padding: .5rem 0;

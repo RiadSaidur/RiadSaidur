@@ -94,7 +94,7 @@ export default {
     padding-bottom: 1rem;
     border-bottom: 1px solid rgba(128, 128, 128, 0.4);
     margin-bottom: 1rem;
-    font-weight: 200;
+    font-weight: 400;
   }
 
   #primaryCTA {

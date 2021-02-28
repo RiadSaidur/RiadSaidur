@@ -47,6 +47,9 @@ export default {
 <style scoped>
   .container {
     padding: 0 .5rem;
+    background: linear-gradient(50deg,aliceblue, whitesmoke, aliceblue);
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
   }
 
   .scr-container {

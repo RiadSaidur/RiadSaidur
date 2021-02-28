@@ -3,7 +3,7 @@
     <h2>Projects</h2>
     <p v-if="!isOnline" class="network-error">you're offline</p>
     <div class="showcase">
-      <button v-if="!projects.length" @click="refreshProjects" title="refresh projects">
+      <button v-if="!projects.length && isOnline" @click="refreshProjects" title="refresh projects">
         <img src="@/assets/refresh.svg" alt="assets" class="refresh">
       </button>
       <div v-for="(project, idx) in projects" :key="idx">
@@ -98,15 +98,10 @@ export default {
 
   .show-on-hover p {
     padding-bottom: 1rem;
-    font-weight: 200;
-  }
-
-  .show-on-hover p, .show-on-hover h3 {
-    color: aliceblue;
   }
 
   .scr-container:hover + .show-on-hover, .show-on-hover:hover {
-    background-color: rgba(76, 0, 130, 0.9);
+    background-color: rgba(240, 248, 255, 0.85);
     height: 100%;
     border-radius: 10px;
     visibility: visible;
