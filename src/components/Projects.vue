@@ -3,8 +3,10 @@
     <h2>Projects</h2>
     <p v-if="!isOnline" class="network-error">you're offline</p>
     <div class="showcase">
+      <button v-if="!projects.length" @click="refreshProjects" title="refresh projects">
+        <img src="@/assets/refresh.svg" alt="assets" class="refresh">
+      </button>
       <div v-for="(project, idx) in projects" :key="idx">
-        <!-- <img :src="project.screenshots[0]" alt="project.screenshot"> -->
         <ImageSlider :screenshots="project.screenshots[0]" :multiple="false" class="scr-container" />
         <div class="show-on-hover">
           <h3>{{ project.name }}</h3>
@@ -49,6 +51,9 @@ export default {
   methods: {
     updateStatus(e) {
       this.isOnline = (e.type === 'online')
+    },
+    refreshProjects() {
+      this.$store.dispatch('getProjectPreviews')
     }
   }
 }
@@ -127,5 +132,14 @@ export default {
     text-align: center;
     background-color: rgba(255, 127, 80, 0.5);
     z-index: 3;
+  }
+
+  button {
+    background: none;
+    border: none;
+  }
+
+  .refresh {
+    width: 48px;
   }
 </style>
