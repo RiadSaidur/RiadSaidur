@@ -30,12 +30,24 @@ export default {
       interval: ''
     }
   },
+  watch: {
+    screenshots: function () {
+      if(this.multiple) this.currentImage = this.screenshots[0]
+    }
+  },
   mounted() {
-    if(this.multiple) this.interval = setInterval(this.changeImage, 3000)
-    else this.currentImage = this.screenshots
+    if(this.multiple) {
+      this.interval = setInterval(this.changeImage, 3000)
+    } else {
+      this.currentImage = this.screenshots
+    }
+  },
+  beforeUnmount() {
+    clearInterval(this.interval)
   },
   methods: {
     changeImage () {
+      console.log(this.screenshots[this.currentIdx]);
       if(this.currentIdx >= this.screenshots.length -1) this.currentIdx = 0
       else this.currentIdx++
       this.currentImage = this.screenshots[this.currentIdx]
