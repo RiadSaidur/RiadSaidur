@@ -47,7 +47,6 @@ export default {
   },
   methods: {
     changeImage () {
-      console.log(this.screenshots[this.currentIdx]);
       if(this.currentIdx >= this.screenshots.length -1) this.currentIdx = 0
       else this.currentIdx++
       this.currentImage = this.screenshots[this.currentIdx]
