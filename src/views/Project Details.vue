@@ -46,6 +46,7 @@ export default {
 
 <style scoped>
   .container {
+    position: relative;
     padding: 0 .5rem;
     background: linear-gradient(50deg,aliceblue, whitesmoke, aliceblue);
     border-bottom-right-radius: 50px;
@@ -78,8 +79,8 @@ export default {
   }
 
   button {
-    position: fixed;
-    top: 30px;
+    position: absolute;
+    top: -50px;
     right: 30px;
     background: none;
     border: none;
@@ -104,7 +105,6 @@ export default {
   .additional-links img {
     width: 24px;
     margin-right: .5rem;
-
   }
 
   @media only screen and (min-width: 720px) {
