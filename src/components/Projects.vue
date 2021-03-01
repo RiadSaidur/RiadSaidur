@@ -2,7 +2,7 @@
   <div class="container" id="projects">
     <h2>Projects</h2>
     <p v-if="!isOnline" class="network-error">you're offline</p>
-    <div class="showcase">
+    <div class="showcase" ref="projects">
       <button v-if="!projects.length && isOnline" @click="refreshProjects" title="refresh projects">
         <img src="@/assets/refresh.svg" alt="assets" class="refresh">
       </button>
@@ -40,9 +40,12 @@ export default {
     ])
   },
   mounted() {
+    // check if the user is online
     this.isOnline = navigator.onLine ? true : false
     window.addEventListener('online', this.updateStatus)
     window.addEventListener('offline', this.updateStatus)
+    // intersection obserever for project showcase animation
+    this.addIntersectionObserver()
   },
   beforeUnmount() {
     window.removeEventListener('online', this.updateStatus)
@@ -54,6 +57,18 @@ export default {
     },
     refreshProjects() {
       this.$store.dispatch('getProjectPreviews')
+    },
+    addIntersectionObserver() {
+      const projectsContainer = this.$refs.projects
+
+      const observer = new IntersectionObserver(entries => {
+        const inIntersecting = entries[0].isIntersecting
+        
+        if(inIntersecting) projectsContainer.classList.add('fade-in')
+        else projectsContainer.classList.remove('fade-in')
+      })
+
+      observer.observe(projectsContainer)
     }
   }
 }
@@ -142,5 +157,18 @@ export default {
 
   .refresh {
     width: 48px;
+  }
+
+  .fade-in {
+    animation: go-fade 1s;
+  }
+
+  @keyframes go-fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 </style>
