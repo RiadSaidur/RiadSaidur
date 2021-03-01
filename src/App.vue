@@ -1,13 +1,12 @@
 <template>
   <div id="nav">
     <header><a href="/">Saidur</a></header>
-    <!-- <nav>
-      <router-link to="/">Home</router-link>
-      <router-link to="/about">About</router-link>
-    </nav> -->
-    <!-- <a href="#contact" id="primaryCTA">Contact Me</a> -->
   </div>
-  <router-view/>
+  <router-view v-slot="{ Component }">
+    <transition name="fade-slide" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </router-view>
   <a class="back-to-top" :class="{ 'hideButton': !showButton }" href='#'>
     <img src="@/assets/top.svg" alt="go to top">
   </a>
@@ -126,5 +125,14 @@ export default {
   .hideButton {
     visibility: none;
     opacity: 0;
+  }
+
+  .fade-slide-enter-from, .fade-slide-leave-to {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  .fade-slide-enter-active, .fade-slide-leave-active {
+    transition: all 300ms ease-out;
   }
 </style>
