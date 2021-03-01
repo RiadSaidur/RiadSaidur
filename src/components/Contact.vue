@@ -7,10 +7,10 @@
         <span>Email: <a href="mailto:riadsaidur@gmail.com">riadsaidur@gmail.com</a></span>
         <span>Mobile: <a href="tel:+8801628381010">(+880) 1628381010</a></span>
         <div class="social">
-          <a href="https://github.com/RiadSaidur" target="_blank">
+          <a href="https://github.com/RiadSaidur" target="_blank" rel="noopener">
             <img src="@/assets/social/github.png" alt="github">
           </a>
-          <a href="https://twitter.com/RiadSaidur" target="_blank">
+          <a href="https://twitter.com/RiadSaidur" target="_blank" rel="noopener">
             <img src="@/assets/social/twitter.png" alt="twitter">
           </a>
         </div>
