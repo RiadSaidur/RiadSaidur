@@ -48,7 +48,8 @@ export default {
 <style scoped>
   a {
     padding: .5rem .3rem;
-    font-weight: 400;
+    font-weight: 600;
+    font-variant: small-caps;
   }
 
   ul {

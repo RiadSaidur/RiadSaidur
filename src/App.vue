@@ -19,9 +19,11 @@ export default {
       showButton: false
     }
   },
+  beforeCreate() {
+    this.$store.dispatch('getProjectPreviews')
+  },
   mounted() {
     window.addEventListener('scroll', this.onScroll)
-    this.$store.dispatch('getProjectPreviews')
   },
   beforeUnmount() {
     window.removeEventListener('scroll', this.onScroll)
@@ -37,7 +39,7 @@ export default {
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
 
   html {
     scroll-behavior: smooth;
@@ -52,6 +54,25 @@ export default {
     color: #2c3e50;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    position: relative;
+    /* background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/triangle-mosaic.png') */
+    /* background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/round.png') */
+    /* background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/square_bg.png') */
+  }
+
+  body::after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/triangle-mosaic.png');
+    filter: blur(1px) opacity(0.9);
+    z-index: -2;
   }
 
   #nav {
@@ -91,9 +112,10 @@ export default {
   h2 {
     text-align: center;
     padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(128, 128, 128, 0.4);
+    border-bottom: 2px solid rgba(128, 128, 128, 0.4);
     margin-bottom: 1rem;
     font-weight: 400;
+    font-variant: small-caps;
   }
 
   #primaryCTA {

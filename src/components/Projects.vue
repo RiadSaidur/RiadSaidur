@@ -127,6 +127,7 @@ export default {
     font-size: 1.5rem;
     padding-bottom: .5rem;
     font-weight: 400;
+    font-variant: small-caps;
   }
 
   #details {
@@ -136,6 +137,7 @@ export default {
     font-weight: 400;
     box-shadow: 0 0 0 2px #A3D4FF;
     transition: all 300ms ease-in-out;
+    font-variant: small-caps;
   }
 
   #details:hover {

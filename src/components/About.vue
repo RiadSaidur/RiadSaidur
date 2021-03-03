@@ -47,7 +47,8 @@ export default {
   }
 
   p:first-child {
-    font-weight: 400;
+    font-size: 1.1rem;
+    font-weight: 600;
   }
 
   @media only screen and (min-width: 720px) {

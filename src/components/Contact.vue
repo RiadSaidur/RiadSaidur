@@ -58,6 +58,15 @@ export default {
 
   .details span {
     display: block;
+    font-size: 1.1rem;
+    font-weight: 400;
+    font-variant: small-caps;
+  }
+
+  .details a {
+    font-size: 1.1rem;
+    font-weight: 400;
+    font-variant: normal;
   }
 
   .social {

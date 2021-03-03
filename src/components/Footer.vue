@@ -19,7 +19,8 @@ export default {
 
   footer p {
     text-align: center;
-    font-weight: 200;
+    font-weight: 400;
     padding: .5rem 0;
+    font-variant: small-caps;
   }
 </style>

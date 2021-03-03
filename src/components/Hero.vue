@@ -3,7 +3,7 @@
     <div class="content">
       <h3>meet the man, the myth, the mystery</h3>
       <h1>Saidur Rahman Riad</h1>
-      <span>a web developing wizard 🍾</span>
+      <h3>a web developing wizard 🍾</h3>
     </div>
   </div>
 </template>
@@ -49,12 +49,23 @@ export default {
     z-index: 1;
   }
 
-  h3, span {
+  h3 {
     font-weight: 200;
   }
   
   h1 {
     font-size: 2.3rem;
-    font-weight: 400;
+    font-weight: 600;
+    font-variant: small-caps;
+  }
+
+  @media only screen and (min-width: 720px) {
+    h1 {
+      font-size: 3rem;
+    }
+
+    h3 {
+      font-weight: 300;
+    }
   }
 </style>
