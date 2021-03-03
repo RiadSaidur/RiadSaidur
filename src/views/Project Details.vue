@@ -6,18 +6,18 @@
     <section class="details">
       <div class="slideshow">
         <h2>Project Screenshots</h2>
-        <ImageSlider :screenshots="projectDetails?.screenshots" :multiple="true" class="scr-container"/>
+        <ImageSlider :screenshots="projectDetails?.foundProject?.screenshots" :multiple="true" class="scr-container"/>
       </div>
       <div>
         <h2>Project Details</h2>
-        <h1>{{ $route.params.id }}</h1>
-        <p>{{ projectDetails?.description }}</p>
+        <h1>{{ projectDetails?.foundProject?.name }}</h1>
+        <p>{{ projectDetails?.foundProject?.description }}</p>
         <div class="additional-links">
-          <a v-if="projectDetails?.github" :href="projectDetails?.github" target="_blank">
+          <a v-if="projectDetails?.foundProject?.github" :href="projectDetails?.foundProject?.github" target="_blank">
             <img src="@/assets/social/github.png" alt="github" title="github repo">
             <span>Github Repository</span>
           </a>
-          <a v-if="projectDetails?.liveLink" :href="projectDetails?.liveLink" target="_blank">
+          <a v-if="projectDetails?.foundProject?.liveLink" :href="projectDetails?.foundProject?.liveLink" target="_blank">
             <img src="@/assets/social/link.png" alt="live link" title="live link">
             <span>Live Project</span>
           </a>
@@ -39,6 +39,13 @@ export default {
     projectDetails() {
       const projectName = this.$route.params.id
       return this.$store.getters.getProjectByName(projectName)
+    }
+  },
+  watch: {
+    projectDetails: function () {
+      // watch for vuex getters to send project info
+      // redirect if project is not found
+      if(!this.projectDetails?.isFound) this.$router.push('/404')
     }
   }
 }
