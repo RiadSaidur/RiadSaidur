@@ -3,27 +3,30 @@
     <button @click="$router.go(-1)" title="go back">
       <img src="@/assets/back.svg" alt="go back">
     </button>
-    <section class="details">
+    <section v-if="projectDetails" class="details">
       <div class="slideshow">
         <h2>Project Screenshots</h2>
-        <ImageSlider :screenshots="projectDetails?.foundProject?.screenshots" :multiple="true" class="scr-container"/>
+        <ImageSlider :screenshots="projectDetails?.screenshots" :multiple="true" class="scr-container"/>
       </div>
       <div>
         <h2>Project Details</h2>
-        <h1>{{ projectDetails?.foundProject?.name }}</h1>
-        <p>{{ projectDetails?.foundProject?.description }}</p>
+        <h1>{{ projectDetails?.name }}</h1>
+        <p>{{ projectDetails?.description }}</p>
         <div class="additional-links">
-          <a v-if="projectDetails?.foundProject?.github" :href="projectDetails?.foundProject?.github" target="_blank">
+          <a v-if="projectDetails?.github" :href="projectDetails?.github" target="_blank">
             <img src="@/assets/social/github.png" alt="github" title="github repo">
             <span>Github Repository</span>
           </a>
-          <a v-if="projectDetails?.foundProject?.liveLink" :href="projectDetails?.foundProject?.liveLink" target="_blank">
+          <a v-if="projectDetails?.liveLink" :href="projectDetails?.liveLink" target="_blank">
             <img src="@/assets/social/link.png" alt="live link" title="live link">
             <span>Live Project</span>
           </a>
         </div>
       </div>
     </section>
+    <div v-else class="no-details">
+      <p>no project named <span>{{ $route.params.id }}</span> </p>
+    </div>
   </div>
 </template>
 
@@ -39,13 +42,6 @@ export default {
     projectDetails() {
       const projectName = this.$route.params.id
       return this.$store.getters.getProjectByName(projectName)
-    }
-  },
-  watch: {
-    projectDetails: function () {
-      // watch for vuex getters to send project info
-      // redirect if project is not found
-      if(!this.projectDetails?.isFound) this.$router.push('/404')
     }
   }
 }
@@ -112,6 +108,21 @@ export default {
   .additional-links img {
     width: 24px;
     margin-right: .5rem;
+  }
+
+  .no-details {
+    height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .no-details p {
+    font-size: 1.5rem;
+  }
+
+  .no-details span {
+    font-size: 2rem;
   }
 
   @media only screen and (min-width: 720px) {

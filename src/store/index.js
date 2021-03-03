@@ -8,19 +8,7 @@ export default createStore({
   },
   getters: {
     getProjectByName: state => name => {
-      // will send false flag if no desired project is not found
-      const project = {
-        isFound: false
-      }
-      // try to find the project
-      const foundProject = state.projects.find(project => project.name === name) 
-      if(foundProject) {
-        // set project details
-        project.isFound = true
-        project.foundProject = foundProject
-      }
-
-      return project
+      return state.projects.find(project => project.name === name)
     }
   },
   mutations: {
