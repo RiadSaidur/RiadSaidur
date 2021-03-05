@@ -27,17 +27,17 @@ export default {
 
 <style scoped>
   .container {
-    padding: 0  .5rem;
+    padding: 3rem .5rem;
     text-align: center;
   }
 
   .content h3 {
     padding: 4rem;
-    background: url("../assets/bg1.jpg");
+    /* background: url("../assets/bg1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode: color-dodge;
-    background-color: rgba(245, 245, 245, 0.8);
+    background-color: rgba(245, 245, 245, 0.8); */
     font-size: 1.3rem;
     width: 100vw;
     transform: translateX(-.5rem);
@@ -47,7 +47,7 @@ export default {
     display: inline-block;
     padding: 0 .2rem;
     transform: translateY(.2rem);
-    background-color: white;
+    /* background-color: white; */
     font-size: 2rem;
   }
 
@@ -67,6 +67,7 @@ export default {
     font-size: 1.1rem;
     font-weight: 400;
     font-variant: normal;
+    color: rgba(0, 197, 142, 1);
   }
 
   .social {

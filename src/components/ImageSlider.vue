@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <img :src="currentImage" :alt="currentImage" class="currentImage">
     <div v-if="multiple" class="legend">
       <button 
@@ -75,13 +75,13 @@ export default {
     display: block;
     width: .5rem;
     height: .5rem;
-    border: 1px solid #2c3e50;
+    border: 1px solid rgb(0,197,142);
     border-radius: 50%;
     margin: .5rem;
   }
 
   .fill {
-    background-color: #2c3e50;
+    background-color: rgb(0,197,142);
     transition: all 300ms ease-in-out;
   }
 

@@ -51,13 +51,15 @@ export default {
     box-sizing: border-box;
     font-family: 'Nunito', sans-serif;
     font-weight: 300;
-    color: #2c3e50;
+    /* color: #2c3e50; */
+    color: #edf2f7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   body {
     position: relative;
+    min-height: 100vh;
     /* background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/triangle-mosaic.png') */
     /* background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/round.png') */
     /* background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/square_bg.png') */
@@ -70,7 +72,8 @@ export default {
     left: 0;
     height: 100%;
     width: 100%;
-    background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/triangle-mosaic.png');
+    /* background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/triangle-mosaic.png'); */
+    background: #2f495e;
     filter: blur(1px) opacity(0.9);
     z-index: -2;
   }
@@ -80,6 +83,7 @@ export default {
     align-items: center;
     justify-content: space-evenly;
     padding: .5rem 0;
+    background: #2f495e;
   }
 
   #nav a {
@@ -93,7 +97,7 @@ export default {
   header a {
     font-family: 'Sacramento', cursive;
     font-size: 2rem;
-    color: rgb(77, 77, 77);
+    /* color: rgb(77, 77, 77); */
   }
 
   #nav a.router-link-exact-active {
@@ -114,7 +118,7 @@ export default {
     padding-bottom: 1rem;
     border-bottom: 2px solid rgba(128, 128, 128, 0.4);
     margin-bottom: 1rem;
-    font-weight: 400;
+    font-weight: 600;
     font-variant: small-caps;
   }
 
@@ -156,5 +160,9 @@ export default {
 
   .fade-slide-enter-active, .fade-slide-leave-active {
     transition: all 300ms ease-out;
+  }
+
+  h1, h2 {
+    letter-spacing: 4px;
   }
 </style>

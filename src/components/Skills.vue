@@ -49,7 +49,9 @@ export default {
   }
 
   .container {
-    padding: 4rem .5rem;
+    padding: 3rem .5rem;
+    background: #2f495e;
+    box-shadow: 0 0 10px 2px #2f495e;
   }
 
   .parent-skills {

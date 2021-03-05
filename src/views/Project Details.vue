@@ -51,9 +51,8 @@ export default {
   .container {
     position: relative;
     padding: 0 .5rem;
-    background: linear-gradient(50deg,aliceblue, whitesmoke, aliceblue);
-    border-bottom-right-radius: 50px;
-    border-top-left-radius: 50px;
+    /* margin-top: 1rem; */
+    /* background: linear-gradient(50deg,aliceblue, whitesmoke, aliceblue); */
   }
 
   .scr-container {
@@ -68,6 +67,7 @@ export default {
 
   p {
     font-size: 1.1rem;
+    margin-top: .3rem;
   }
 
   .details {

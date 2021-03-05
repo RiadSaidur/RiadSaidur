@@ -21,8 +21,9 @@ export default {
 
 <style scoped>
   .container {
-    padding: 0 .5rem;
-    padding-top: 1rem;
+    padding: 3rem .5rem;
+    background: #2f495e;
+    box-shadow: 0 0 10px 2px #2f495e;
   }
 
   .content {
@@ -44,11 +45,14 @@ export default {
 
   p {
     margin-bottom: .3rem;
+    line-height: 1.6rem;
+    font-weight: 400;
   }
 
   p:first-child {
     font-size: 1.1rem;
     font-weight: 600;
+    color: #00c58e;
   }
 
   @media only screen and (min-width: 720px) {

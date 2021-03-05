@@ -47,9 +47,16 @@ export default {
 
 <style scoped>
   a {
-    padding: .5rem .3rem;
+    padding: 1rem .3rem;
     font-weight: 600;
     font-variant: small-caps;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    transition: all 300ms ease;
+  }
+
+  a:hover {
+    color: rgba(0, 197, 142, 1);
   }
 
   ul {
@@ -59,12 +66,14 @@ export default {
   .container {
     position: sticky;
     top: 47.59px;
-    padding: .8rem;
+    padding: 1rem 0;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    background: linear-gradient(aliceblue, whitesmoke, aliceblue);
+    /* background: linear-gradient(aliceblue, whitesmoke, aliceblue); */
+    background: #2f495e;
     transform: translate3d(0, 0, 0);
+    box-shadow: 0 0 10px 2px #2f495e;
     transition: 0.1s all ease-in-out;
     z-index: 2;
   }
@@ -75,6 +84,6 @@ export default {
 
   .reposition-top {
     top: 0px;
-    box-shadow: 0 0 10px 0 gray;
+    /* box-shadow: 0 0 10px 0 rgba(0, 197, 142, .3); */
   }
 </style>

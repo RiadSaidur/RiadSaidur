@@ -14,7 +14,9 @@ export default {
 
 <style scoped>
   footer {
-    background: linear-gradient(aliceblue, whitesmoke, aliceblue);
+    /* background: linear-gradient(aliceblue, whitesmoke, aliceblue); */
+    background-color: rgba(44, 62, 80, 1);
+    box-shadow: 0 0 10px 2px #2f495e;
   }
 
   footer p {

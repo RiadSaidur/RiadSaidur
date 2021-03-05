@@ -76,7 +76,7 @@ export default {
 
 <style scoped>
   .container {
-    padding: 0 .5rem;
+    padding: 3rem .5rem;
   }
 
   .showcase {
@@ -84,7 +84,7 @@ export default {
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    padding: 1.5rem;
+    /* padding: 1.5rem; */
     display: flex;
     align-items: center;
     max-width: 1500px;
@@ -93,7 +93,7 @@ export default {
 
   .showcase > div {
     position: relative;
-    padding: 2rem 1rem 0;
+    padding: 0 .5rem;
   }
 
   .scr-container {
@@ -102,13 +102,14 @@ export default {
 
   .show-on-hover {
     position: absolute;
-    top: 10%;
+    top: 0;
     left: 0;
     width: 100%;
+    /* height: 100%; */
     padding: 1rem 0 1rem 1rem;
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
+    transition: all 0s, opacity 0.5s linear;
   }
 
   .show-on-hover p {
@@ -116,7 +117,8 @@ export default {
   }
 
   .scr-container:hover + .show-on-hover, .show-on-hover:hover {
-    background-color: rgba(240, 248, 255, 0.85);
+    /* background-color: rgba(240, 248, 255, 0.85); */
+    background: rgba(47, 73, 94, .85);
     height: 100%;
     border-radius: 10px;
     visibility: visible;
@@ -131,13 +133,17 @@ export default {
   }
 
   #details {
-    background-color: whitesmoke;
+    /* background-color: rgba(44, 62, 80, 1); */
+    color: #00c58e;
     padding: .3rem 1rem;
-    border-radius: 5px;
-    font-weight: 400;
+    border-radius: 2px;
+    font-weight: 600;
+    font-size: 1.1rem;
     box-shadow: 0 0 0 2px #A3D4FF;
     transition: all 300ms ease-in-out;
     font-variant: small-caps;
+    /* display: inline-flex;
+    justify-content: center; */
   }
 
   #details:hover {
@@ -171,6 +177,12 @@ export default {
     }
     to {
       opacity: 1;
+    }
+  }
+
+  @media only screen and (min-width: 720px) {
+    .scr-container {
+      max-width: 380px;
     }
   }
 </style>
