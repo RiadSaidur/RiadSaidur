@@ -1,9 +1,12 @@
 <template>
-  <div id="contact" class="container">
-    <h2>Contact</h2>
+  <section id="contact" class="container">
+    <h2>
+      <span>Stay in touch</span>
+      Contact
+    </h2>
     <div class="content">
       <h3>Don't be shy, Say <span>Hi.</span> </h3>
-      <div class="details">
+      <div class="details" ref="contact">
         <span>Email: <a href="mailto:riadsaidur@gmail.com">riadsaidur@gmail.com</a></span>
         <span>Mobile: <a href="tel:+8801628381010">(+880) 1628381010</a></span>
         <div class="social">
@@ -16,28 +19,41 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
 export default {
-  name: "Contact"
+  name: "Contact",
+  mounted() {
+    this.addIntersectionObserver()
+  },
+  methods: {
+    addIntersectionObserver() {
+      const contactSection = this.$refs.contact
+
+      const observer = new IntersectionObserver(entries => {
+        const isIntersecting = entries[0].isIntersecting
+        if(isIntersecting) this.$router.push('/#contact')
+      })
+
+      observer.observe(contactSection)
+    }
+  }
 }
 </script>
 
 <style scoped>
   .container {
     padding: 3rem .5rem;
+  }
+
+  .content {
     text-align: center;
   }
 
   .content h3 {
     padding: 4rem;
-    /* background: url("../assets/bg1.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-blend-mode: color-dodge;
-    background-color: rgba(245, 245, 245, 0.8); */
     font-size: 1.3rem;
     width: 100vw;
     transform: translateX(-.5rem);
@@ -47,7 +63,6 @@ export default {
     display: inline-block;
     padding: 0 .2rem;
     transform: translateY(.2rem);
-    /* background-color: white; */
     font-size: 2rem;
   }
 

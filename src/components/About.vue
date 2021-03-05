@@ -1,7 +1,10 @@
 <template>
-  <div class="container" id="about">
-    <h2>About</h2>
-    <div class="content">
+  <section class="container" id="about">
+    <h2>
+      <span>What defines me</span>
+      About
+    </h2>
+    <div class="content" ref="about">
       <img src="@/assets/display-photo.jpg" alt="Saidur Riad">
       <div>
         <p>Hi, I'm Saidur, a multi-talented devil with over eternity worth of experience.</p>
@@ -10,20 +13,35 @@
         <p>Fueled by the screams of peasants in purgatory, I'm always inpiring and more than willing to follow my fascination. Just ideas are not enough to contain me, proper execution and acts are what keeping me alive.</p>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
 export default {
-  name: "About"
+  name: "About",
+  mounted() {
+    this.addIntersectionObserver()
+  },
+  methods: {
+    addIntersectionObserver() {
+      const aboutSection = this.$refs.about
+
+      const observer = new IntersectionObserver(entries => {
+        const isIntersecting = entries[0].isIntersecting
+        if(isIntersecting) this.$router.push('/#about')
+      })
+
+      observer.observe(aboutSection)
+    }
+  }
 }
 </script>
 
 <style scoped>
   .container {
     padding: 3rem .5rem;
-    background: #2f495e;
-    box-shadow: 0 0 10px 2px #2f495e;
+    background: #2c3e50;
+    box-shadow: 0 0 10px 2px #2c3e50;
   }
 
   .content {

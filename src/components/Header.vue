@@ -1,14 +1,19 @@
 <template>
-  <div class="container" :class="{ 'hide-navbar': !showNavbar, 'reposition-top': !onTopY }">
+  <section class="container" :class="{ 'hide-navbar': !showNavbar, 'reposition-top': !onTopY }">
     <nav>
       <ul>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li v-for="(link, idx) in links" :key="idx">
+          <a
+            :href="`#${link}`"
+            :title="link"
+            :class="hash === link ? 'active' : '' "
+          >
+            {{ link }}
+          </a>
+        </li>
       </ul>
     </nav>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -16,9 +21,15 @@ export default {
   name: "Header",
   data() {
     return {
+      links: [ 'skills', "projects", "about", "contact" ],
       showNavbar: true,
       onTopY: true,
       lastScrollPosition: 0
+    }
+  },
+  computed: {
+    hash() {
+      return this.$route.hash.substring(1)
     }
   },
   mounted () {
@@ -49,13 +60,14 @@ export default {
   a {
     padding: 1rem .3rem;
     font-weight: 600;
+    text-transform: capitalize;
     font-variant: small-caps;
     font-size: 1.2rem;
     letter-spacing: 1px;
     transition: all 300ms ease;
   }
 
-  a:hover {
+  .active {
     color: rgba(0, 197, 142, 1);
   }
 
@@ -70,10 +82,9 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    /* background: linear-gradient(aliceblue, whitesmoke, aliceblue); */
-    background: #2f495e;
+    background: #2c3e50;
     transform: translate3d(0, 0, 0);
-    box-shadow: 0 0 10px 2px #2f495e;
+    box-shadow: 0 0 10px 2px #2c3e50;
     transition: 0.1s all ease-in-out;
     z-index: 2;
   }
@@ -84,6 +95,5 @@ export default {
 
   .reposition-top {
     top: 0px;
-    /* box-shadow: 0 0 10px 0 rgba(0, 197, 142, .3); */
   }
 </style>

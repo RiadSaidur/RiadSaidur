@@ -1,12 +1,15 @@
 <template>
-  <div class="container" id="skills">
-    <h2>Skills</h2>
-    <div class="parent-skills">
+  <section class="container" id="skills">
+    <h2>
+      <span>What can I offer</span>
+      Skills
+    </h2>
+    <div class="parent-skills" ref="skills">
       <div class="child-skills" v-for="(skill, idx) in skillsList" :key="idx">
         <img :src="getImageURL(skill)" :alt="skill" :title="skill">
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -35,9 +38,22 @@ export default {
       ]  
     }
   },
+  mounted() {
+    this.addIntersectionObserver()
+  },
   methods: {
     getImageURL(logo) {
       return require(`../assets/skills/${logo}.png`);
+    },
+    addIntersectionObserver() {
+      const skillsSection = this.$refs.skills
+
+      const observer = new IntersectionObserver(entries => {
+        const isIntersecting = entries[0].isIntersecting
+        if(isIntersecting) this.$router.push('/#skills')
+      })
+
+      observer.observe(skillsSection)
     }
   }
 }
@@ -50,8 +66,8 @@ export default {
 
   .container {
     padding: 3rem .5rem;
-    background: #2f495e;
-    box-shadow: 0 0 10px 2px #2f495e;
+    background: #2c3e50;
+    box-shadow: 0 0 10px 2px #2c3e50;
   }
 
   .parent-skills {

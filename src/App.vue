@@ -39,7 +39,7 @@ export default {
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
 
   html {
     scroll-behavior: smooth;
@@ -51,7 +51,6 @@ export default {
     box-sizing: border-box;
     font-family: 'Nunito', sans-serif;
     font-weight: 300;
-    /* color: #2c3e50; */
     color: #edf2f7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -60,22 +59,7 @@ export default {
   body {
     position: relative;
     min-height: 100vh;
-    /* background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/triangle-mosaic.png') */
-    /* background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/round.png') */
-    /* background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/square_bg.png') */
-  }
-
-  body::after {
-    content: ' ';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    /* background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/triangle-mosaic.png'); */
     background: #2f495e;
-    filter: blur(1px) opacity(0.9);
-    z-index: -2;
   }
 
   #nav {
@@ -83,26 +67,12 @@ export default {
     align-items: center;
     justify-content: space-evenly;
     padding: .5rem 0;
-    background: #2f495e;
-  }
-
-  #nav a {
-    padding: .5rem .3rem;
-  }
-
-  #nav nav a {
-    font-weight: 200;
+    background: #2c3e50;
   }
 
   header a {
     font-family: 'Sacramento', cursive;
     font-size: 2rem;
-    /* color: rgb(77, 77, 77); */
-  }
-
-  #nav a.router-link-exact-active {
-    color: indigo;
-    font-weight: 400;
   }
 
   a {
@@ -114,12 +84,19 @@ export default {
   }
 
   h2 {
-    text-align: center;
     padding-bottom: 1rem;
+    padding-left: 2rem;
     border-bottom: 2px solid rgba(128, 128, 128, 0.4);
     margin-bottom: 1rem;
     font-weight: 600;
     font-variant: small-caps;
+  }
+
+  h2 span {
+    display: block;
+    font-weight: 200;
+    font-size: 1rem;
+    color: rgb(237,242,247, .8);
   }
 
   #primaryCTA {
@@ -164,5 +141,12 @@ export default {
 
   h1, h2 {
     letter-spacing: 4px;
+  }
+
+  @media only screen and (min-width: 720px) {
+    h2 {
+      padding-left: 6rem;
+      font-size: 2.5rem;
+    }
   }
 </style>

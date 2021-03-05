@@ -1,9 +1,9 @@
 <template>
-  <div class="container">
+  <section class="container">
     <footer>
       <p>©️ 2021 Saidur Rahman Riad</p>
     </footer>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -14,9 +14,8 @@ export default {
 
 <style scoped>
   footer {
-    /* background: linear-gradient(aliceblue, whitesmoke, aliceblue); */
-    background-color: rgba(44, 62, 80, 1);
-    box-shadow: 0 0 10px 2px #2f495e;
+    background: #2c3e50;
+    box-shadow: 0 0 10px 2px #2c3e50;
   }
 
   footer p {

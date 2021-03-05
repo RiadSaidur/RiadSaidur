@@ -1,24 +1,42 @@
 <template>
-  <div class="container">
+  <section class="container" ref="hero">
     <div class="content">
       <h3>meet the man, the myth, the mystery</h3>
       <h1>Saidur Rahman Riad</h1>
       <h3>a web developing wizard 🍾</h3>
       <div class="ctas">
         <button>
-          <a href="#projects">See My Work</a>
+          <a href="#projects">See My Works</a>
         </button>
         <button>
           <a href="#">Download Resume</a>
         </button>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
 export default {
-  name: 'Hero'
+  name: 'Hero',
+  mounted() {
+    this.addIntersectionObserver()
+  },
+  methods: {
+    getImageURL(logo) {
+      return require(`../assets/skills/${logo}.png`);
+    },
+    addIntersectionObserver() {
+      const heroSection = this.$refs.hero
+
+      const observer = new IntersectionObserver(entries => {
+        const isIntersecting = entries[0].isIntersecting
+        if(isIntersecting) this.$router.push('/')
+      })
+
+      observer.observe(heroSection)
+    }
+  }
 }
 </script>
 
@@ -29,21 +47,6 @@ export default {
     text-align: center;
     height: calc(100vh - 250px);
   }
-
-  /* .container::after {
-    content: ' ';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../assets/home-background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: right;
-    background-position-y: top;
-    filter: blur(4px);
-  } */
 
   .content {
     position: absolute;
@@ -70,9 +73,6 @@ export default {
   }
 
   .ctas {
-    /* display: flex;
-    align-items: center;
-    justify-content: space-evenly; */
     width: 100%;
     margin-top: 2rem;
   }
@@ -103,7 +103,7 @@ export default {
 
   @media only screen and (min-width: 720px) {
     h1 {
-      font-size: 3rem;
+      font-size: 4rem;
     }
 
     h3 {

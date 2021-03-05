@@ -1,6 +1,9 @@
 <template>
-  <div class="container" id="projects">
-    <h2>Projects</h2>
+  <section class="container" id="projects">
+    <h2>
+      <span>My works</span>
+      Projects
+    </h2>
     <p v-if="!isOnline" class="network-error">you're offline</p>
     <div class="showcase" ref="projects">
       <button v-if="!projects.length && isOnline" @click="refreshProjects" title="refresh projects">
@@ -17,7 +20,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -59,16 +62,19 @@ export default {
       this.$store.dispatch('getProjectPreviews')
     },
     addIntersectionObserver() {
-      const projectsContainer = this.$refs.projects
+      const projectsSection = this.$refs.projects
 
       const observer = new IntersectionObserver(entries => {
-        const inIntersecting = entries[0].isIntersecting
+        const isIntersecting = entries[0].isIntersecting
         
-        if(inIntersecting) projectsContainer.classList.add('fade-in')
-        else projectsContainer.classList.remove('fade-in')
+        if(isIntersecting) {
+          this.$router.push("/#projects")
+          projectsSection.classList.add('fade-in')
+        }
+        else projectsSection.classList.remove('fade-in')
       })
 
-      observer.observe(projectsContainer)
+      observer.observe(projectsSection)
     }
   }
 }
@@ -84,7 +90,6 @@ export default {
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    /* padding: 1.5rem; */
     display: flex;
     align-items: center;
     max-width: 1500px;
@@ -105,7 +110,6 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
-    /* height: 100%; */
     padding: 1rem 0 1rem 1rem;
     visibility: hidden;
     opacity: 0;
@@ -117,8 +121,7 @@ export default {
   }
 
   .scr-container:hover + .show-on-hover, .show-on-hover:hover {
-    /* background-color: rgba(240, 248, 255, 0.85); */
-    background: rgba(47, 73, 94, .85);
+    background: rgba(44, 62, 80, 0.85);
     height: 100%;
     border-radius: 10px;
     visibility: visible;
@@ -133,7 +136,6 @@ export default {
   }
 
   #details {
-    /* background-color: rgba(44, 62, 80, 1); */
     color: #00c58e;
     padding: .3rem 1rem;
     border-radius: 2px;
@@ -142,8 +144,6 @@ export default {
     box-shadow: 0 0 0 2px #A3D4FF;
     transition: all 300ms ease-in-out;
     font-variant: small-caps;
-    /* display: inline-flex;
-    justify-content: center; */
   }
 
   #details:hover {
