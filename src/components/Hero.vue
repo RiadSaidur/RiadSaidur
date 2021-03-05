@@ -23,9 +23,6 @@ export default {
     this.addIntersectionObserver()
   },
   methods: {
-    getImageURL(logo) {
-      return require(`../assets/skills/${logo}.png`);
-    },
     addIntersectionObserver() {
       const heroSection = this.$refs.hero
 
