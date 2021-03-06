@@ -14,14 +14,14 @@
             <div v-for="(inputField, idx) in inputFields" :key="idx">
               <label :for="inputField.name">
                 <span>{{ inputField.name }}</span>
-                <input :type="inputField.type" :id="inputField.name" :name="inputField.name" v-model="inputData[inputField.name]">
+                <input :type="inputField.type" :id="inputField.name" :name="inputField.name" v-model="inputData[inputField.name]" required>
               </label>
 
             </div>
             <div>
               <label for="message">
                 <span>message</span>
-                <textarea name="message" id="message" cols="10" rows="10" v-model="inputData.message"></textarea>
+                <textarea name="message" id="message" cols="10" rows="10" v-model="inputData.message" required></textarea>
               </label>
             </div>
             <button type="submit" :disabled="loading">
@@ -146,7 +146,7 @@ export default {
     padding: 0 .2rem;
     transform: translateY(.2rem);
     font-size: 2rem;
-    color: rgba(0, 197, 142, 1);
+    color: #00c58e;
   }
 
   .details {
@@ -165,7 +165,7 @@ export default {
     font-size: 1.1rem;
     font-weight: 400;
     font-variant: normal;
-    color: rgba(0, 197, 142, 1);
+    color: #00c58e;
   }
 
   .social {
@@ -193,19 +193,29 @@ export default {
   }
 
   textarea {
-    height: 10rem;
+    height: 5rem;
   }
 
   input:focus, textarea:focus {
     outline: none;
-    border-bottom: 2px solid rgba(0, 197, 142, 1);
+    border-bottom: 2px solid #00c58e;
   }
 
   button {
+    position: absolute;
+    right: 0;
     border: none;
     background: none;
-    border: 1px solid rgba(0, 197, 142, 1);
+    border: 1px solid #00c58e;
     padding: .5rem 1rem;
+    font-variant: small-caps;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+
+  button span {
+    font-weight: 600;
   }
 
   .form {
@@ -213,13 +223,6 @@ export default {
     width: 100%;
     position: relative;
     padding-bottom: 2.5rem;
-  }
-
-  button {
-    position: absolute;
-    right: 0;
-    border-radius: 4px;
-    font-weight: 600;
   }
 
   button img {
