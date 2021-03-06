@@ -8,6 +8,7 @@
     <div class="content">
       <div>
         <h3>Don't be shy, Say <span>Hi.</span> </h3>
+        <p class="status" v-if="messageStatus" :class="messageStatus.success ? 'success' : 'error' ">{{ messageStatus.message }}</p>
         <div class="form">
           <form @submit.prevent="sendMessage">
             <div v-for="(inputField, idx) in inputFields" :key="idx">
@@ -23,7 +24,10 @@
                 <textarea name="message" id="message" cols="10" rows="10" v-model="inputData.message"></textarea>
               </label>
             </div>
-            <button type="submit">Send Message</button>
+            <button type="submit" :disabled="loading">
+              <img src="@/assets/loading.svg" alt="loading" title="loading" v-if="loading">
+              <span v-if="!loading">Send Message</span>
+            </button>
           </form>
         </div>
       </div>
@@ -46,6 +50,7 @@
 </template>
 
 <script>
+import { messageCollection } from '@/firebase'
 export default {
   name: "Contact",
   data() {
@@ -64,7 +69,9 @@ export default {
         name: '',
         email: '',
         message: ''
-      }
+      },
+      loading: false,
+      messageStatus: undefined
     }
   },
   mounted() {
@@ -81,8 +88,38 @@ export default {
 
       observer.observe(contactSection)
     },
-    sendMessage(e) {
-      console.log(e);
+    clearInputData() {
+      this.inputData.name = ''
+      this.inputData.email = ''
+      this.inputData.message = ''
+    },
+    async sendMessage() {
+      this.loading = true
+
+      if(!this.inputData.name && !this.inputData.email && !this.inputData.message) return this.loading = false
+
+      this.inputData.createdAt = new Date().toLocaleString()
+
+      try {
+        await messageCollection.add(this.inputData)
+        this.messageStatus = {
+          success: true,
+          message: "Your prayer has been heard"
+        }
+        this.clearInputData()
+      } catch (error) {
+        this.messageStatus = {
+          success: false,
+          message: "Can't hear you"
+        }
+        console.log(error);
+      }
+
+      setTimeout(() => {
+        this.messageStatus = undefined
+      }, 5000)
+
+      this.loading = false
     }
   }
 }
@@ -152,6 +189,7 @@ export default {
     width: 100%;
     padding: .5rem 1rem;
     margin-bottom: 1rem;
+    font-size: 1rem;
   }
 
   textarea {
@@ -181,12 +219,61 @@ export default {
     position: absolute;
     right: 0;
     border-radius: 4px;
+    font-weight: 600;
+  }
+
+  button img {
+    width: 1.5rem;
+    animation: rotate infinite 3000ms ease alternate;
+  }
+
+  button:disabled {
+    border: none;
   }
 
   label span {
     display: block;
     text-transform: capitalize;
     font-variant: small-caps;
+  }
+
+  .status {
+    border-radius: 4px;
+    padding: .3rem;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    font-variant: small-caps;
+    transition: all 300ms ease;
+  }
+
+  .success {
+    opacity: 1;
+    border: 1px solid rgba(0, 197, 142, 1);
+    color: rgba(0, 197, 142, 1);
+  }
+
+  .error {
+    opacity: 1;
+    border: 1px solid coral;
+    color: coral;
+  }
+
+
+  @keyframes rotate {
+    0% {
+      opacity: 0;
+      transform: rotate(0deg);
+    }
+    40% {
+      transform: rotate(120deg);
+    }
+    60% {
+      transform: rotate(240deg);
+    }
+    100% {
+      opacity: 1;
+      transform: rotate(360deg);
+    }
   }
 
   @media only screen and (min-width: 720px) {
