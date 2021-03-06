@@ -15,7 +15,7 @@
           <h3>{{ project.name }}</h3>
           <p>{{ project.description }}</p>
           <router-link :to="'/project/'+project.name" id="details">
-            details
+            Details
           </router-link>
         </div>
       </div>
@@ -120,7 +120,7 @@ export default {
     padding-bottom: 1rem;
   }
 
-  .scr-container:hover + .show-on-hover, .show-on-hover:hover {
+  .scr-container:hover + .show-on-hover, .show-on-hover:hover, #details {
     background: rgba(44, 62, 80, 0.85);
     height: 100%;
     border-radius: 10px;
@@ -136,18 +136,43 @@ export default {
   }
 
   #details {
-    color: #00c58e;
     padding: .3rem 1rem;
-    border-radius: 2px;
+    border-radius: 4px;
     font-weight: 600;
     font-size: 1.1rem;
-    box-shadow: 0 0 0 2px #A3D4FF;
+    letter-spacing: 1px;
+    border: 1px solid #00c58e;
     transition: all 300ms ease-in-out;
     font-variant: small-caps;
   }
 
   #details:hover {
-    box-shadow: 0 0 4px 2px #A3D4FF;
+    box-shadow: 0 0 4px 2px rgba(0, 197, 142, .2);
+  }
+
+  #details {
+    position: relative;
+    overflow: hidden;
+  }
+
+  #details:after {
+    content: "";
+    background: #00c58d7c;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s;
+  }
+
+  #details:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
   }
 
   .network-error {

@@ -1,9 +1,9 @@
 <template>
   <section class="container" ref="hero">
     <div class="content">
-      <h3>meet the man, the myth, the mystery</h3>
+      <p>Meet the man, the myth, the mystery</p>
       <h1>Saidur Rahman Riad</h1>
-      <h3>a web developing wizard 🍾</h3>
+      <p>A web developing wizard 🍾</p>
       <div class="ctas">
         <button>
           <a href="#projects">See My Works</a>
@@ -58,8 +58,10 @@ export default {
     z-index: 1;
   }
 
-  h3 {
+  p {
+    font-size: 1.1rem;
     font-weight: 200;
+    font-variant: small-caps;
   }
   
   h1 {
@@ -81,21 +83,48 @@ export default {
     margin: .5rem .5rem;
     border-radius: 4px;
     border-radius: 4px;
+    transition: all 300ms ease;
+  }
+
+  button {
+    position: relative;
+    overflow: hidden;
+  }
+
+  button:after {
+    content: "";
+    background: #00c58d7c;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s;
+  }
+
+  button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
   }
 
   .ctas button:first-child {
-    background-color: rgb(0,197,142);
+    background-color: #00c58e;
     box-shadow: 0 0 10px 2px #2f495e;
   }
 
   .ctas button:last-child {
-    border: 1px solid rgb(0,197,142);
+    border: 1px solid #00c58e;
   }
 
   .ctas a {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1rem;
     letter-spacing: 1px;
+    font-variant: small-caps;
   }
 
   @media only screen and (min-width: 720px) {
@@ -103,8 +132,13 @@ export default {
       font-size: 4rem;
     }
 
-    h3 {
+    p {
       font-weight: 300;
+      font-size: 1.2rem;
+    }
+
+    .ctas a {
+      font-size: 1.1rem;
     }
   }
 </style>

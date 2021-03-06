@@ -65,6 +65,8 @@ export default {
     margin-bottom: .3rem;
     line-height: 1.6rem;
     font-weight: 400;
+    font-variant: small-caps;
+    letter-spacing: 1px;
   }
 
   p:first-child {
