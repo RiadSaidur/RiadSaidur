@@ -38,22 +38,9 @@ export default {
       ]  
     }
   },
-  mounted() {
-    this.addIntersectionObserver()
-  },
   methods: {
     getImageURL(logo) {
       return require(`../assets/skills/${logo}.png`);
-    },
-    addIntersectionObserver() {
-      const skillsSection = this.$refs.skills
-
-      const observer = new IntersectionObserver(entries => {
-        const isIntersecting = entries[0].isIntersecting
-        if(isIntersecting) this.$router.push('/#skills')
-      })
-
-      observer.observe(skillsSection)
     }
   }
 }

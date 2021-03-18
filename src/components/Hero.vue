@@ -5,12 +5,16 @@
       <h1>Saidur Rahman Riad</h1>
       <p>A web developing wizard 🍾</p>
       <div class="ctas">
-        <button>
-          <a href="#projects">See My Works</a>
-        </button>
-        <button>
-          <a href="#">Download Resume</a>
-        </button>
+        <a href="#projects">
+          <button>
+            See My Works
+          </button>
+        </a>
+        <a href="#">
+          <button>
+            Download Resume
+          </button>
+        </a>
       </div>
     </div>
   </section>
@@ -18,22 +22,7 @@
 
 <script>
 export default {
-  name: 'Hero',
-  mounted() {
-    this.addIntersectionObserver()
-  },
-  methods: {
-    addIntersectionObserver() {
-      const heroSection = this.$refs.hero
-
-      const observer = new IntersectionObserver(entries => {
-        const isIntersecting = entries[0].isIntersecting
-        if(isIntersecting) this.$router.push('/')
-      })
-
-      observer.observe(heroSection)
-    }
-  }
+  name: 'Hero'
 }
 </script>
 
@@ -76,7 +65,7 @@ export default {
     margin-top: 2rem;
   }
 
-  .ctas button {
+  .ctas a button {
     background: none;
     border: none;
     padding: .5rem 1rem;
@@ -111,16 +100,16 @@ export default {
     transition: 0s
   }
 
-  .ctas button:first-child {
+  .ctas a:first-child button {
     background-color: #00c58e;
     box-shadow: 0 0 10px 2px #2f495e;
   }
 
-  .ctas button:last-child {
+  .ctas a:last-child button {
     border: 1px solid #00c58e;
   }
 
-  .ctas a {
+  .ctas a button {
     font-weight: 700;
     font-size: 1rem;
     letter-spacing: 1px;

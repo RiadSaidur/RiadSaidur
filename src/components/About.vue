@@ -8,8 +8,8 @@
       <img src="@/assets/display-photo.jpg" alt="Saidur Riad">
       <div>
         <p>Hi, I'm Saidur, a multi-talented devil with over eternity worth of experience.</p>
-        <p>You can also call me a product designer, experience designer, bringer of light, UI designer.</p>
-        <p>I am a tech enthusiast and a learner. I define myself by the work I want to do rather than the works I've done. I am always down for learning new skill or a few spells.</p>
+        <p>You can also call me a Product Designer, Experience Designer, UI Designer.</p>
+        <p>I am a tech enthusiast and a learner. I define myself by the work I want to do rather than the works I've done. I am always eager for learning new skill.</p>
         <p>Fueled by the screams of peasants in purgatory, I'm always inpiring and more than willing to follow my fascination. Just ideas are not enough to contain me, proper execution and acts are what keeping me alive.</p>
       </div>
     </div>
@@ -18,22 +18,7 @@
 
 <script>
 export default {
-  name: "About",
-  mounted() {
-    this.addIntersectionObserver()
-  },
-  methods: {
-    addIntersectionObserver() {
-      const aboutSection = this.$refs.about
-
-      const observer = new IntersectionObserver(entries => {
-        const isIntersecting = entries[0].isIntersecting
-        if(isIntersecting) this.$router.push('/#about')
-      })
-
-      observer.observe(aboutSection)
-    }
-  }
+  name: "About"
 }
 </script>
 

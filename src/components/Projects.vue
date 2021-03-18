@@ -68,7 +68,6 @@ export default {
         const isIntersecting = entries[0].isIntersecting
         
         if(isIntersecting) {
-          this.$router.push("/#projects")
           projectsSection.classList.add('fade-in')
         }
         else projectsSection.classList.remove('fade-in')

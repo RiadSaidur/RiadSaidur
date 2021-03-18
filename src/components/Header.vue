@@ -67,7 +67,7 @@ export default {
     transition: all 300ms ease;
   }
 
-  .active {
+  .active, a:hover {
     color: rgba(0, 197, 142, 1);
   }
 

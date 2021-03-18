@@ -74,20 +74,7 @@ export default {
       messageStatus: undefined
     }
   },
-  mounted() {
-    this.addIntersectionObserver()
-  },
   methods: {
-    addIntersectionObserver() {
-      const contactSection = this.$refs.contact
-
-      const observer = new IntersectionObserver(entries => {
-        const isIntersecting = entries[0].isIntersecting
-        if(isIntersecting) this.$router.push('/#contact')
-      })
-
-      observer.observe(contactSection)
-    },
     clearInputData() {
       this.inputData.name = ''
       this.inputData.email = ''
@@ -104,13 +91,13 @@ export default {
         await messageCollection.add(this.inputData)
         this.messageStatus = {
           success: true,
-          message: "Your prayer has been heard"
+          message: "I will get back to you as soon as possible"
         }
         this.clearInputData()
       } catch (error) {
         this.messageStatus = {
           success: false,
-          message: "Can't hear you"
+          message: "Facing some issues right now, try emailing me directly"
         }
         console.log(error);
       }
@@ -198,7 +185,7 @@ export default {
 
   input:focus, textarea:focus {
     outline: none;
-    border-bottom: 2px solid #00c58e;
+    border-bottom: 1px solid #00c58e;
   }
 
   button {
