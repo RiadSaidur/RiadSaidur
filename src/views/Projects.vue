@@ -176,7 +176,9 @@ export default {
     padding: .5rem;
     font-weight: 400;
     text-align: center;
-    background-color: rgba(255, 127, 80, 0.5);
+    border: 1px solid coral;
+    color: coral;
+    border-radius: 4px;
     z-index: 3;
   }
 
