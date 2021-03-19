@@ -20,11 +20,10 @@ export default {
     flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 63px);
   }
 
   img {
-    width: 50%;
+    height: 20vw;
     padding: 1rem .5rem;
   }
 

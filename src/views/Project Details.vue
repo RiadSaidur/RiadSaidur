@@ -1,8 +1,5 @@
 <template>
   <div class="container">
-    <button @click="$router.go(-1)" title="go back">
-      <img src="@/assets/back.svg" alt="go back">
-    </button>
     <section v-if="projectDetails" class="details">
       <div class="slideshow">
         <h2>Project Screenshots</h2>
@@ -48,13 +45,6 @@ export default {
 </script>
 
 <style scoped>
-  .container {
-    position: relative;
-    padding: 0 .5rem;
-    /* margin-top: 1rem; */
-    /* background: linear-gradient(50deg,aliceblue, whitesmoke, aliceblue); */
-  }
-
   .scr-container {
     margin: 0 auto;
     max-height: 80vh;
@@ -77,21 +67,7 @@ export default {
   
 
   .details > div {
-    padding: 1rem;
     width: 100%;
-  }
-
-  button {
-    position: absolute;
-    top: -50px;
-    right: 30px;
-    background: none;
-    border: none;
-    color: aliceblue;
-  }
-
-  button img {
-    width: 2rem;
   }
 
   .additional-links {
@@ -129,6 +105,21 @@ export default {
     .details {
       flex-direction: row;
       justify-content: space-evenly;
+    }
+
+    .details > div:first-child {
+      padding-right: 1rem;
+      width: 100%;
+    }
+
+    .details > div:last-child {
+      padding-left: 1rem;
+      width: 100%;
+    }
+
+    .slideshow {
+      display: flex;
+      flex-direction: column;
     }
   }
 </style>

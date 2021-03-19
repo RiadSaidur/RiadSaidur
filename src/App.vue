@@ -1,6 +1,11 @@
 <template>
   <div id="nav">
-    <header><a href="/">Saidur</a></header>
+    <header>
+      <router-link to="/">
+        Saidur
+      </router-link>
+    </header>
+    <nav-links />
   </div>
   <router-view v-slot="{ Component }">
     <transition name="fade-slide" mode="out-in">
@@ -13,7 +18,11 @@
 </template>
 
 <script>
+import NavLinks from "@/components/NavLinks"
 export default {
+  components: {
+    NavLinks
+  },
   data() {
     return {
       showButton: false
@@ -59,15 +68,15 @@ export default {
   body {
     position: relative;
     min-height: 100vh;
-    background: #2f495e;
+    background: url("./assets/background.png");
   }
 
   #nav {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     padding: .5rem 0;
-    background: #2c3e50;
   }
 
   header a {
@@ -99,12 +108,8 @@ export default {
     color: rgb(237,242,247, .8);
   }
 
-  #primaryCTA {
-    border: 1px solid gray;
-    border-radius: .5rem;
-    background-color: indigo;
-    color: ivory;
-    padding: .5rem 1rem !important;
+  section {
+    padding: 0em .5rem 3rem;
   }
 
   .back-to-top {
@@ -132,7 +137,6 @@ export default {
 
   .fade-slide-enter-from, .fade-slide-leave-to {
     opacity: 0;
-    transform: translateX(20px);
   }
 
   .fade-slide-enter-active, .fade-slide-leave-active {
@@ -141,6 +145,22 @@ export default {
 
   h1, h2 {
     letter-spacing: 4px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, .7);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgb(108,99,255);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(73, 64, 245);
   }
 
   @media only screen and (min-width: 720px) {

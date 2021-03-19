@@ -14,7 +14,7 @@
         <div class="show-on-hover">
           <h3>{{ project.name }}</h3>
           <p>{{ project.description }}</p>
-          <router-link :to="'/project/'+project.name" id="details">
+          <router-link :to="'/project/'+project.name" class="details">
             Details
           </router-link>
         </div>
@@ -80,10 +80,6 @@ export default {
 </script>
 
 <style scoped>
-  .container {
-    padding: 3rem .5rem;
-  }
-
   .showcase {
     display: flex;
     align-items: center;
@@ -97,7 +93,7 @@ export default {
 
   .showcase > div {
     position: relative;
-    padding: 0 .5rem;
+    padding: .5rem;
   }
 
   .scr-container {
@@ -119,8 +115,8 @@ export default {
     padding-bottom: 1rem;
   }
 
-  .scr-container:hover + .show-on-hover, .show-on-hover:hover, #details {
-    background: rgba(44, 62, 80, 0.85);
+  .scr-container:hover + .show-on-hover, .show-on-hover:hover, .details {
+    background: rgba(0, 0, 0, 0.7);
     height: 100%;
     border-radius: 10px;
     visibility: visible;
@@ -134,29 +130,31 @@ export default {
     font-variant: small-caps;
   }
 
-  #details {
+  .details {
     padding: .3rem 1rem;
-    border-radius: 4px;
+    border-radius: 3px;
     font-weight: 600;
     font-size: 1.1rem;
     letter-spacing: 1px;
-    border: 1px solid #00c58e;
+    /* border: 1px solid #00c58e; */
+    border: 1px solid rgb(108,99,255);
     transition: all 300ms ease-in-out;
     font-variant: small-caps;
   }
 
-  #details:hover {
+  .details:hover {
     box-shadow: 0 0 4px 2px rgba(0, 197, 142, .2);
   }
 
-  #details {
+  .details {
     position: relative;
     overflow: hidden;
   }
 
-  #details:after {
+  .details:after {
     content: "";
-    background: #00c58d7c;
+    /* background: #00c58d7c; */
+    background: rgb(108,99,255);
     display: block;
     position: absolute;
     padding-top: 300%;
@@ -167,7 +165,7 @@ export default {
     transition: all 0.8s;
   }
 
-  #details:active:after {
+  .details:active:after {
     padding: 0;
     margin: 0;
     opacity: 1;

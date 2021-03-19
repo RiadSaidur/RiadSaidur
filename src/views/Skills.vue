@@ -51,12 +51,6 @@ export default {
     width: 48px;
   }
 
-  .container {
-    padding: 3rem .5rem;
-    background: #2c3e50;
-    box-shadow: 0 0 10px 2px #2c3e50;
-  }
-
   .parent-skills {
     display: flex;
     align-items: center;

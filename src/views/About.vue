@@ -23,12 +23,6 @@ export default {
 </script>
 
 <style scoped>
-  .container {
-    padding: 3rem .5rem;
-    background: #2c3e50;
-    box-shadow: 0 0 10px 2px #2c3e50;
-  }
-
   .content {
     padding: 1rem 0;
     display: flex;
@@ -57,7 +51,8 @@ export default {
   p:first-child {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #00c58e;
+    /* color: #00c58e; */
+    color: rgb(108,99,255);
   }
 
   @media only screen and (min-width: 720px) {

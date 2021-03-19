@@ -8,6 +8,26 @@ const routes = [
     component: Home
   },
   {
+    path: '/skills',
+    name: 'Skills',
+    component: () => import(/* webpackChunkName: "skills" */ '../views/Skills.vue')
+  },
+  {
+    path: '/projects',
+    name: 'Projects',
+    component: () => import(/* webpackChunkName: "projects" */ '../views/Projects.vue')
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: () => import(/* webpackChunkName: "contact */ '../views/Contact.vue')
+  },
+  {
     path: '/project/:id',
     name: 'Project Details',
     component: () => import(/* webpackChunkName: "project_details" */ '../views/Project Details.vue')

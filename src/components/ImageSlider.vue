@@ -75,13 +75,15 @@ export default {
     display: block;
     width: .5rem;
     height: .5rem;
-    border: 1px solid rgb(0,197,142);
+    /* border: 1px solid rgb(0,197,142); */
+    border: 1px solid rgb(108,99,255);
     border-radius: 50%;
     margin: .5rem;
   }
 
   .fill {
-    background-color: rgb(0,197,142);
+    /* background-color: rgb(0,197,142); */
+    background-color: rgb(108,99,255);
     transition: all 300ms ease-in-out;
   }
 

@@ -113,10 +113,6 @@ export default {
 </script>
 
 <style scoped>
-  .container {
-    padding: 3rem .5rem;
-  }
-
   .content {
     text-align: center;
   }
@@ -133,7 +129,8 @@ export default {
     padding: 0 .2rem;
     transform: translateY(.2rem);
     font-size: 2rem;
-    color: #00c58e;
+    /* color: #00c58e; */
+    color: rgb(108,99,255);
   }
 
   .details {
@@ -152,7 +149,8 @@ export default {
     font-size: 1.1rem;
     font-weight: 400;
     font-variant: normal;
-    color: #00c58e;
+    /* color: #00c58e; */
+    color: rgb(108,99,255);
   }
 
   .social {
@@ -185,7 +183,8 @@ export default {
 
   input:focus, textarea:focus {
     outline: none;
-    border-bottom: 1px solid #00c58e;
+    /* border-bottom: 1px solid #00c58e; */
+    border-bottom: 1px solid rgb(108,99,255);
   }
 
   button {
@@ -193,7 +192,8 @@ export default {
     right: 0;
     border: none;
     background: none;
-    border: 1px solid #00c58e;
+    /* border: 1px solid #00c58e; */
+    border: 1px solid rgb(108,99,255);
     padding: .5rem 1rem;
     font-variant: small-caps;
     letter-spacing: 1px;
@@ -238,8 +238,10 @@ export default {
 
   .success {
     opacity: 1;
-    border: 1px solid rgba(0, 197, 142, 1);
-    color: rgba(0, 197, 142, 1);
+    /* border: 1px solid rgba(0, 197, 142, 1); */
+    border: 1px solid rgb(108,99,255);
+    /* color: rgba(0, 197, 142, 1); */
+    color: rgb(108,99,255);
   }
 
   .error {
