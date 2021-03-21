@@ -174,8 +174,8 @@ export default {
     padding: .5rem;
     font-weight: 400;
     text-align: center;
-    border: 1px solid coral;
-    color: coral;
+    border: 1px solid #FF485A;
+    color: #FF485A;
     border-radius: 4px;
     z-index: 3;
   }
