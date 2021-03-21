@@ -49,6 +49,8 @@ export default {
     window.addEventListener('offline', this.updateStatus)
     // intersection obserever for project showcase animation
     this.addIntersectionObserver()
+    // set index number for touch swipe navigation
+    this.$store.dispatch("setPageIdx", 2)
   },
   beforeUnmount() {
     window.removeEventListener('online', this.updateStatus)

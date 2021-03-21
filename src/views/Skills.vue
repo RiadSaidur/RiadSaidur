@@ -42,6 +42,10 @@ export default {
     getImageURL(logo) {
       return require(`../assets/skills/${logo}.png`);
     }
+  },
+  beforeUnmount() {
+    // set index number for touch swipe navigation
+    // this.$store.dispatch("setPageIdx", 1)
   }
 }
 </script>

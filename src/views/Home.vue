@@ -22,7 +22,11 @@
 
 <script>
 export default {
-  name: 'Hero'
+  name: 'Hero',
+  mounted() {
+    // set index number for touch swipe navigation
+    this.$store.dispatch("setPageIdx", 0)
+  }
 }
 </script>
 

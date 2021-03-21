@@ -31,7 +31,18 @@ export default {
   },
   data() {
     return {
-      showButton: false
+      showButton: false,
+      touch: {
+        startX: 0,
+        endX: 0,
+        startY: 0,
+        endY: 0
+      }
+    }
+  },
+  computed: {
+    pageIdx() {
+      return this.$store.state.currentPageIdx
     }
   },
   beforeCreate() {
@@ -39,6 +50,9 @@ export default {
   },
   mounted() {
     window.addEventListener('scroll', this.onScroll)
+    window.addEventListener('touchstart', this.touchstart)
+    window.addEventListener('touchmove', this.touchmove)
+    window.addEventListener('touchend', this.touchend)
   },
   beforeUnmount() {
     window.removeEventListener('scroll', this.onScroll)
@@ -47,6 +61,31 @@ export default {
     onScroll() {
       const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
       this.showButton = currentScrollPosition > window.innerHeight;
+    },
+    touchstart(e) {
+      this.touch.startX = e.touches[0].clientX
+      this.touch.startY = e.touches[0].clientY
+      this.touch.endX = 0
+      this.touch.endY = 0
+    },
+    touchmove(e) {
+      this.touch.endX = e.touches[0].clientX
+      this.touch.endY = e.touches[0].clientY
+    },
+    touchend() {
+      const swipeDistanceX = Math.abs(this.touch.startX - this.touch.endX)
+      const swipeDistanceY = Math.abs(this.touch.startY - this.touch.endY)
+      
+      if(swipeDistanceX < 150 || swipeDistanceY > 100 || this.touch.endX < 10) return
+      
+      const pages = [ "/", "/skills", "/projects", "/about", "/contact" ]
+
+      const swipeDirection = Math.round(this.touch.startX - this.touch.endX)
+
+      if(swipeDirection > 0) this.$store.dispatch("updatePageIdx", true)
+      else this.$store.dispatch("updatePageIdx", false)
+
+      this.$router.push(pages[this.pageIdx])
     }
   }
 }

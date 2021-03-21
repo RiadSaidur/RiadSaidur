@@ -18,7 +18,11 @@
 
 <script>
 export default {
-  name: "About"
+  name: "About",
+  mounted() {
+    // set index number for touch swipe navigation
+    this.$store.dispatch("setPageIdx", 3)
+  }
 }
 </script>
 

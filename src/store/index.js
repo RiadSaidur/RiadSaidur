@@ -4,7 +4,8 @@ import { projectCollection } from '@/firebase'
 export default createStore({
   state: {
     projects: [],
-    screenshots: []
+    screenshots: [],
+    currentPageIdx: 0
   },
   getters: {
     getProjectByName: state => name => {
@@ -14,6 +15,9 @@ export default createStore({
   mutations: {
     SET_PROJECT_PREVIEWS(state, projects) {
       state.projects = projects
+    },
+    SET_CURRENT_PAGE_IDX(state, pageIdx) {
+      state.currentPageIdx = pageIdx
     }
   },
   actions: {
@@ -34,6 +38,23 @@ export default createStore({
       })
 
       commit('SET_PROJECT_PREVIEWS', projects)
+    },
+    updatePageIdx({ commit, state }, next ) {
+      let pageIdx = state.currentPageIdx
+
+      if(next) {
+        if(pageIdx === 4) pageIdx = 0
+        else pageIdx++
+      }
+      else {
+        if(pageIdx === 0) pageIdx = 4
+        else pageIdx--
+      }
+
+      commit("SET_CURRENT_PAGE_IDX", pageIdx)
+    },
+    setPageIdx({ commit }, pageIdx) {
+      commit("SET_CURRENT_PAGE_IDX", pageIdx)
     }
   },
   modules: {

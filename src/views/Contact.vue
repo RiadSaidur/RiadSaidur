@@ -74,6 +74,10 @@ export default {
       messageStatus: undefined
     }
   },
+  mounted() {
+    // set index number for touch swipe navigation
+    this.$store.dispatch("setPageIdx", 4)
+  },
   methods: {
     clearInputData() {
       this.inputData.name = ''
