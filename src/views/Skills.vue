@@ -43,9 +43,9 @@ export default {
       return require(`../assets/skills/${logo}.png`);
     }
   },
-  beforeUnmount() {
+  mounted() {
     // set index number for touch swipe navigation
-    // this.$store.dispatch("setPageIdx", 1)
+    this.$store.dispatch("setPageIdx", 1)
   }
 }
 </script>
