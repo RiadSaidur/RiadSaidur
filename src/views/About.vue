@@ -4,7 +4,7 @@
       <span>What defines me</span>
       About
     </h2>
-    <div class="content" ref="about">
+    <div class="content">
       <img src="@/assets/display-photo.jpg" alt="Saidur Riad">
       <div>
         <p>Hi, I'm Saidur, a multi-talented devil with over eternity worth of experience.</p>
@@ -23,6 +23,9 @@ export default {
 </script>
 
 <style scoped>
+  section {
+    min-height: 100vh;
+  }
   .content {
     padding: 1rem 0;
     display: flex;
@@ -36,8 +39,7 @@ export default {
     margin-bottom: 1rem;
     width: 300px;
     border-radius: 50%;
-    border: 8px solid white;
-    box-shadow: 0 0 0 2px hsl(0, 0%, 80%);
+    box-shadow: 0 0 0 2px #3BFFD6;
   }
 
   p {
@@ -51,8 +53,7 @@ export default {
   p:first-child {
     font-size: 1.1rem;
     font-weight: 600;
-    /* color: #00c58e; */
-    color: rgb(108,99,255);
+    color: #3BFFD6;
   }
 
   @media only screen and (min-width: 720px) {

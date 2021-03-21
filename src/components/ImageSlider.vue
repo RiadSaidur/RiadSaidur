@@ -77,13 +77,14 @@ export default {
     height: .5rem;
     /* border: 1px solid rgb(0,197,142); */
     border: 1px solid rgb(108,99,255);
+    border: 1px solid #20B394;
     border-radius: 50%;
     margin: .5rem;
   }
 
   .fill {
     /* background-color: rgb(0,197,142); */
-    background-color: rgb(108,99,255);
+    background-color: #20B394;
     transition: all 300ms ease-in-out;
   }
 

@@ -1,20 +1,26 @@
 <template>
-  <div id="nav">
-    <header>
-      <router-link to="/">
-        Saidur
-      </router-link>
-    </header>
-    <nav-links />
+  <div class="layout">
+    <div id="nav">
+      <header>
+        <router-link to="/">
+          Saidur
+        </router-link>
+      </header>
+      <div class="nav-links">
+        <nav-links />
+      </div>
+    </div>
+    <div class="views">
+      <router-view v-slot="{ Component }">
+        <transition name="fade-slide" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </router-view>
+      <a class="back-to-top" :class="{ 'hideButton': !showButton }" href='#'>
+        <img src="@/assets/top.svg" alt="go to top">
+      </a>
+    </div>
   </div>
-  <router-view v-slot="{ Component }">
-    <transition name="fade-slide" mode="out-in">
-      <component :is="Component" />
-    </transition>
-  </router-view>
-  <a class="back-to-top" :class="{ 'hideButton': !showButton }" href='#'>
-    <img src="@/assets/top.svg" alt="go to top">
-  </a>
 </template>
 
 <script>
@@ -68,20 +74,21 @@ export default {
   body {
     position: relative;
     min-height: 100vh;
-    background: url("./assets/background.png");
+    background-image: url("./assets/background.png") ;
   }
 
   #nav {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    padding: .5rem 0;
+    justify-content: space-between;
+    padding: .5rem 1.5rem;
+    background-color: rgba(0, 0, 0, 0.2);
   }
 
   header a {
     font-family: 'Sacramento', cursive;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    color: #FF485A;
   }
 
   a {
@@ -99,6 +106,7 @@ export default {
     margin-bottom: 1rem;
     font-weight: 600;
     font-variant: small-caps;
+    color: #FF485A;
   }
 
   h2 span {
@@ -109,7 +117,7 @@ export default {
   }
 
   section {
-    padding: 0em .5rem 3rem;
+    padding: 2rem .5rem 3rem;
   }
 
   .back-to-top {
@@ -152,21 +160,56 @@ export default {
   }
 
   ::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, .7);
+    background: #33060b;
   }
   
   ::-webkit-scrollbar-thumb {
-    background: rgb(108,99,255);
+    background: #FF485A;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: rgb(73, 64, 245);
+    background: #CC3948;
   }
 
-  @media only screen and (min-width: 720px) {
+  @media only screen and (min-width: 1000px) {
     h2 {
       padding-left: 6rem;
       font-size: 2.5rem;
+    }
+    .layout {
+      display: flex;
+      height: 100vh;
+    }
+    .layout #nav {
+      display: initial;
+      position: sticky;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      min-width: 20rem;
+      max-width: 20rem;
+      padding-top: 2rem;
+      background: none;
+      border-radius: -100px;
+    } 
+    .layout .views {
+      flex-grow: 8;
+    }
+    header {
+      width: 100%;
+      text-align: center;
+    }
+    header a {
+      font-size: 3rem;
+    }
+    .nav-links {
+      display: flex;
+      height: 70%;
+      align-items: center;
+      justify-content: center;
+    }
+    section {
+      padding-top: 2rem;
     }
   }
 </style>

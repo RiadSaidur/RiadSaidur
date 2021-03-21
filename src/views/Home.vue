@@ -1,22 +1,22 @@
 <template>
-  <section class="container" ref="hero">
-    <div class="content">
-      <p>Meet the man, the myth, the mystery</p>
-      <h1>Saidur Rahman Riad</h1>
-      <p>A web developing wizard 🍾</p>
-      <div class="ctas">
-        <router-link to="projects">
-          <button>
-            See My Works
-          </button>
-        </router-link>
-        <a href="#">
-          <button>
-            Download Resume
-          </button>
-        </a>
+  <section class="container">
+      <div>
+        <p>Meet the man, the myth, the mystery</p>
+        <h1>Saidur Rahman Riad</h1>
+        <p>A web developing wizard 🍾</p>
+        <div class="ctas">
+          <router-link to="projects">
+            <button>
+              See My Works
+            </button>
+          </router-link>
+          <a href="https://firebasestorage.googleapis.com/v0/b/saiduriad.appspot.com/o/resume%2FSaidurRahman.pdf?alt=media" download="Resume - Saidur">
+            <button>
+              Download Resume
+            </button>
+          </a>
+        </div>
       </div>
-    </div>
   </section>
 </template>
 
@@ -27,26 +27,13 @@ export default {
 </script>
 
 <style scoped>
-  .container {
-    position: relative;
-    padding: 10rem .5rem;
-    text-align: center;
-    height: calc(100vh - 250px);
-  }
-
-  .content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+  section {
+    height: calc(100vh - 74px);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 1;
+    text-align: center;
   }
-
   p {
     font-size: 1.1rem;
     font-weight: 200;
@@ -57,12 +44,13 @@ export default {
     font-size: 2.5rem;
     font-weight: 600;
     font-variant: small-caps;
-    /* color: #00c58e; */
-    color: rgb(108,99,255);
+    color: #FF485A;
   }
 
   .ctas {
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     margin-top: 2rem;
   }
 
@@ -70,7 +58,6 @@ export default {
     background: none;
     border: none;
     padding: .5rem 1rem;
-    margin: .5rem .5rem;
     border-radius: 4px;
     border-radius: 4px;
     transition: all 300ms ease;
@@ -83,8 +70,7 @@ export default {
 
   button:after {
     content: "";
-    /* background: #00c58d7c; */
-    background: rgb(108,99,255);
+    background: #3BFFD6;
     display: block;
     position: absolute;
     padding-top: 300%;
@@ -103,15 +89,11 @@ export default {
   }
 
   .ctas a:first-child button {
-    /* background-color: #00c58e; */
-    background-color: rgb(108,99,255);
-    /* box-shadow: 0 0 10px 2px #2f495e; */
-    box-shadow: 0 0 10px 2px rgb(44, 39, 136);
+    background-color: #FF485A;
   }
 
   .ctas a:last-child button {
-    /* border: 1px solid #00c58e; */
-    border: 1px solid rgb(108,99,255);
+    border: 1px solid #FF485A;
   }
 
   .ctas a button {
@@ -122,6 +104,9 @@ export default {
   }
 
   @media only screen and (min-width: 720px) {
+    section {
+      height: 100vh;
+    }
     h1 {
       font-size: 4rem;
     }

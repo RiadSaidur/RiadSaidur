@@ -47,6 +47,9 @@ export default {
 </script>
 
 <style scoped>
+  section {
+    min-height: 100vh;
+  }
   img {
     width: 48px;
   }
@@ -56,7 +59,7 @@ export default {
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
   }
 

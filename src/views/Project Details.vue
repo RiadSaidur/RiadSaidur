@@ -2,11 +2,11 @@
   <div class="container">
     <section v-if="projectDetails" class="details">
       <div class="slideshow">
-        <h2>Project Screenshots</h2>
+        <h2>Screenshots</h2>
         <ImageSlider :screenshots="projectDetails?.screenshots" :multiple="true" class="scr-container"/>
       </div>
       <div>
-        <h2>Project Details</h2>
+        <h2>Details</h2>
         <h1>{{ projectDetails?.name }}</h1>
         <p>{{ projectDetails?.description }}</p>
         <div class="additional-links">
@@ -63,6 +63,8 @@ export default {
   .details {
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    padding-top: 3rem;
   }
   
 
@@ -84,6 +86,7 @@ export default {
   .additional-links img {
     width: 24px;
     margin-right: .5rem;
+    filter: invert();
   }
 
   .no-details {
@@ -101,6 +104,11 @@ export default {
     font-size: 2rem;
   }
 
+  .slideshow {
+    display: flex;
+    flex-direction: column;
+  }
+
   @media only screen and (min-width: 720px) {
     .details {
       flex-direction: row;
@@ -115,11 +123,6 @@ export default {
     .details > div:last-child {
       padding-left: 1rem;
       width: 100%;
-    }
-
-    .slideshow {
-      display: flex;
-      flex-direction: column;
     }
   }
 </style>

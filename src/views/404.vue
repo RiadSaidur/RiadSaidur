@@ -2,7 +2,7 @@
   <div class="container">
     <img src="@/assets/404.svg" alt="404">
     <div>
-      <h1>Please go back <a href="/">🔙</a></h1>
+      <h1>Please go back <a href="/">Back</a></h1>
       <p>don't startle me like that 👀</p>
     </div>
   </div>
@@ -23,7 +23,8 @@ export default {
   }
 
   img {
-    height: 20vw;
+    height: 50vh;
+    max-width: 95vw;
     padding: 1rem .5rem;
   }
 
@@ -36,9 +37,14 @@ export default {
     line-height: 2rem;
   }
 
-  @media only screen and (min-witdh: 720px)  {
+  a {
+    color: #FF485A;
+    border-bottom: 1px solid thistle;
+  }
+
+  @media only screen and (min-width: 1000px) {
     .container {
-      flex-direction: row;
+      height: 100vh;
     }
   }
 </style>

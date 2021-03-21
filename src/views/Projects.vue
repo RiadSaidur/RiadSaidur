@@ -136,8 +136,7 @@ export default {
     font-weight: 600;
     font-size: 1.1rem;
     letter-spacing: 1px;
-    /* border: 1px solid #00c58e; */
-    border: 1px solid rgb(108,99,255);
+    border: 1px solid #FF485A;
     transition: all 300ms ease-in-out;
     font-variant: small-caps;
   }
@@ -153,8 +152,7 @@ export default {
 
   .details:after {
     content: "";
-    /* background: #00c58d7c; */
-    background: rgb(108,99,255);
+    background: #FF485A;
     display: block;
     position: absolute;
     padding-top: 300%;

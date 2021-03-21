@@ -113,6 +113,9 @@ export default {
 </script>
 
 <style scoped>
+  section {
+    min-height: 100vh;
+  }
   .content {
     text-align: center;
   }
@@ -129,8 +132,7 @@ export default {
     padding: 0 .2rem;
     transform: translateY(.2rem);
     font-size: 2rem;
-    /* color: #00c58e; */
-    color: rgb(108,99,255);
+    color: #3BFFD6;
   }
 
   .details {
@@ -149,8 +151,7 @@ export default {
     font-size: 1.1rem;
     font-weight: 400;
     font-variant: normal;
-    /* color: #00c58e; */
-    color: rgb(108,99,255);
+    color: #3BFFD6;
   }
 
   .social {
@@ -163,7 +164,12 @@ export default {
   }
 
   .social img {
-    width: 1.5rem;
+    width: 24px;
+    height: 24px;
+  }
+
+  .social a:first-child {
+    filter: invert();
   }
 
   input, textarea {
@@ -183,8 +189,7 @@ export default {
 
   input:focus, textarea:focus {
     outline: none;
-    /* border-bottom: 1px solid #00c58e; */
-    border-bottom: 1px solid rgb(108,99,255);
+    border-bottom: 1px solid #20B394;
   }
 
   button {
@@ -192,8 +197,7 @@ export default {
     right: 0;
     border: none;
     background: none;
-    /* border: 1px solid #00c58e; */
-    border: 1px solid rgb(108,99,255);
+    border: 1px solid #3BFFD6;
     padding: .5rem 1rem;
     font-variant: small-caps;
     letter-spacing: 1px;
@@ -203,6 +207,7 @@ export default {
 
   button span {
     font-weight: 600;
+    color: #3BFFD6;
   }
 
   .form {
@@ -238,16 +243,14 @@ export default {
 
   .success {
     opacity: 1;
-    /* border: 1px solid rgba(0, 197, 142, 1); */
-    border: 1px solid rgb(108,99,255);
-    /* color: rgba(0, 197, 142, 1); */
-    color: rgb(108,99,255);
+    border: 1px solid #20B394;
+    color: #20B394;
   }
 
   .error {
     opacity: 1;
-    border: 1px solid coral;
-    color: coral;
+    border: 1px solid #FF485A;
+    color: #FF485A;
   }
 
 
