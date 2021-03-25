@@ -82,6 +82,9 @@ export default {
 
       const swipeDirection = Math.round(this.touch.startX - this.touch.endX)
 
+      // return to project list page if on project description page
+      if(this.$route.name === "Project Details") return this.$router.push("/projects")
+
       if(swipeDirection > 0) this.$store.dispatch("updatePageIdx", true)
       else this.$store.dispatch("updatePageIdx", false)
 
