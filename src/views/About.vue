@@ -5,7 +5,7 @@
       About
     </h2>
     <div class="content">
-      <img src="@/assets/display-photo.jpg" alt="Saidur Riad">
+      <img src="@/assets/-z49uda-min.jpg" alt="Saidur Riad">
       <div>
         <p>Hi, I'm Saidur, a multi-talented Developer with a passion to find simple solution to complex problems.</p>
         <p>You can also call me a Product Designer, Experience Designer, UI Designer.</p>
