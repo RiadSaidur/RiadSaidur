@@ -42,6 +42,12 @@
           <a href="https://twitter.com/RiadSaidur" target="_blank" rel="noopener">
             <img src="@/assets/social/twitter.png" alt="twitter">
           </a>
+          <a href="https://www.linkedin.com/in/riadsaidur/" target="_blank" rel="noopener">
+            <img src="@/assets/social/linkedin.png" alt="linkedin">
+          </a>
+          <a href="https://dribbble.com/RiadSaidur" target="_blank" rel="noopener">
+            <img src="@/assets/social/dribbble.png" alt="dribbble">
+          </a>
         </div>
       </div>
 
