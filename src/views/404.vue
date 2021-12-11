@@ -2,8 +2,8 @@
   <div class="container">
     <img src="@/assets/404.svg" alt="404">
     <div>
-      <h1>Please go back <a href="/">Back</a></h1>
       <p>don't startle me like that 👀</p>
+      <h1>Please go back <a href="/">Back</a></h1>
     </div>
   </div>
 </template>
