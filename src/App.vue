@@ -116,7 +116,7 @@ export default {
   body {
     position: relative;
     min-height: 100vh;
-    background-image: url("./assets/background.png") ;
+    background-image: url("./assets/background.jpg") ;
   }
 
   #nav {
@@ -172,6 +172,11 @@ export default {
     transition: visibility 0s, opacity 0.5s linear;
   }
 
+  .back-to-top img {
+    height: 2rem;
+    width: 2rem;
+  }
+
   button:focus {
     outline: none;
   }
@@ -193,7 +198,7 @@ export default {
     transition: all 300ms ease-out;
   }
 
-  h1, h2 {
+  h1, h2, h3, figcaption {
     letter-spacing: 4px;
   }
 
