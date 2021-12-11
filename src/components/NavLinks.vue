@@ -38,6 +38,7 @@ export default {
 
   button img {
     width: 2rem;
+    height: 2rem;
   }
 
   nav button:hover+ul {
