@@ -8,7 +8,7 @@
       <img src="@/assets/-z49uda-min.jpg" alt="Saidur Riad">
       <div>
         <p>Hi, I'm Saidur, a multi-talented Developer with a passion to find simple solution to complex problems.</p>
-        <p>You can also call me a Product Designer, Experience Designer, UI Designer.</p>
+        <p>You can also call me a Product Designer, Experience Designer, UI Designer, Content Writter.</p>
         <p>I am a tech enthusiast and a learner. I define myself by the work I want to do rather than the works I've done. I am always eager for learning new skill.</p>
         <p>Fueled by my passion for technology, I'm always inspiring and more than willing to follow my fascination. Just ideas are not enough to contain me, proper execution and acts are what keeping me alive.</p>
       </div>
