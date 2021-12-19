@@ -35,20 +35,7 @@
       <div class="details" ref="contact">
         <span>Email: <a href="mailto:riadsaidur@gmail.com">riadsaidur@gmail.com</a></span>
         <span>Mobile: <a href="tel:+8801628381010">(+880) 1628381010</a></span>
-        <div class="social">
-          <a href="https://github.com/RiadSaidur" target="_blank" rel="noopener">
-            <img src="@/assets/social/github.png" alt="github">
-          </a>
-          <a href="https://twitter.com/RiadSaidur" target="_blank" rel="noopener">
-            <img src="@/assets/social/twitter.png" alt="twitter">
-          </a>
-          <a href="https://www.linkedin.com/in/riadsaidur/" target="_blank" rel="noopener">
-            <img src="@/assets/social/linkedin.png" alt="linkedin">
-          </a>
-          <a href="https://dribbble.com/RiadSaidur" target="_blank" rel="noopener">
-            <img src="@/assets/social/dribbble.png" alt="dribbble">
-          </a>
-        </div>
+        <social />
       </div>
 
     </div>
@@ -57,7 +44,9 @@
 
 <script>
 import { messageCollection } from '@/firebase'
+import social from '../components/social.vue'
 export default {
+  components: { social },
   name: "Contact",
   data() {
     return {
