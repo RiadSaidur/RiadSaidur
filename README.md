@@ -2,7 +2,7 @@
 
 **I am a Student, Web Developer, and a Designer 🎭**
 
-## Find ME
+## Find Me
 
 [<img title="Portfolio" align="left" alt="portfolio" width="22px" style="filter: invert();" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][portfolio]
 [<img title="LinkedIn" align="left" alt="LinkedIn" width="22px" style="filter: invert();" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin]
