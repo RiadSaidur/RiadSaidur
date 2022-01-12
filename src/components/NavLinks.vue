@@ -26,7 +26,6 @@ export default {
 
 <style scoped>
   .router-link-exact-active {
-    /* color: rgb(108,99,255); */
     color: #FF485A;
     transition: all 500ms ease;
   }
@@ -68,28 +67,16 @@ export default {
     width: 80vw;
     line-height: 4rem;
     z-index: 3;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(1.7rem);
     transform: translateX(-120%);
     transition: all 300ms ease;
-    /* box-shadow: 0 0 20px 1px rgba(107, 99, 255, 0.3); */
     box-shadow: 0 0 15px 1px #ff485aa4;
   }
 
   ul li {
     transform: translateY(-4rem);
   }
-
-  /* .container {
-    position: sticky;
-    top: 47.59px;
-    padding: 1rem 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    transform: translate3d(0, 0, 0);
-    transition: 0.1s all ease-in-out;
-    z-index: 2;
-  } */
 
   @media only screen and (min-width: 1000px) {
     nav button {
