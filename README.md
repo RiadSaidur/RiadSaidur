@@ -2,6 +2,7 @@
 
 **I am a Student, Web Developer, and a Designer 🎭**
 ***
+<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=RiadSaidur&show_icons=true&locale=en&layout=compact&theme=radical&title_color=fff" alt="RiadSaidur" /></p>
 
 ## Find Me
 
@@ -10,8 +11,6 @@
 [<img title="Medium" align="left" alt="Medium" width="22px" style="filter: invert()" src="src/assets/social/medium.png" />][medium]
 [<img title="Twitter" align="left" alt="Twitter" width="22px" src="src/assets/social/twitter.png" />][twitter]
 [<img title="Dribbble" align="left" alt="Dribbble" width="22px" src="src/assets/social/dribbble.png" />][dribbble]
-
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=RiadSaidur&show_icons=true&locale=en&layout=compact&theme=radical&title_color=fff" alt="RiadSaidur" /></p>
 
 [portfolio]: https://saiduriad.web.app/
 [twitter]: https://twitter.com/RiadSaidur
