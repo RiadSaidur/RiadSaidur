@@ -3,7 +3,7 @@
 **I am a Student, Web Developer, and a Designer 🎭**
 ***
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=RiadSaidur&show_icons=true&locale=en&layout=compact&theme=radical&title_color=fff" alt="RiadSaidur" /></p>
-<br>
+<br/>
 ## Find Me
 
 [<img title="Portfolio" align="left" alt="portfolio" width="22px" src="https://www.svgrepo.com/show/298710/world-wide.svg" />][portfolio]
