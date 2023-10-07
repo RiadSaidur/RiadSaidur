@@ -18,7 +18,7 @@ export default {
   name: "nav-links",
   data() {
     return {
-      links: [ 'skills', "projects", "about", "contact" ]
+      links: [ 'skills', "projects", "about", "contact", "blogs" ]
     }
   }
 }
