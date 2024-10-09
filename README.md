@@ -1,6 +1,6 @@
 # Hello There
 
-**I am a Student, Web Developer, and a Designer 🎭**
+**I am a Teacher, Software Developer, and a Designer 🎭**
 ***
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=RiadSaidur&show_icons=true&locale=en&layout=compact&theme=radical&title_color=fff" alt="RiadSaidur" /></p>
 
